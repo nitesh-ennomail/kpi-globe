@@ -8,7 +8,7 @@ function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="home" element={<Home />}></Route>
-        <Route path="driver" element={<HomeDriver />} />
+        <Route path="/driver" element={<HomeDriver />} />
         {/* <Sidebar /> */}
         {/* <Route path="/home" element={<Home />} /> */}
 

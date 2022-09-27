@@ -1,38 +1,46 @@
 import React, { useEffect } from "react";
+import $ from "jquery";
 function Navbar() {
+  useEffect(() => {
+    // $(".rotate").on("click", function () {
+    //   console.log("asd");
+    //   alert("Asd");
+    //   $(this).toggleClass("down");
+    // });
+  }, []);
   return (
     <React.Fragment>
       {/* <!-- Navbar --> */}
       <nav
-        class="navbar navbar-main navbar-expand-lg position-sticky mt-2 top-1 px-0 me-4 shadow-none border-radius-xl z-index-sticky"
+        className="navbar navbar-main navbar-expand-lg position-sticky mt-2 top-1 px-0 me-4 shadow-none border-radius-xl z-index-sticky"
         id="navbarBlur"
         data-scroll="true"
       >
-        <div class="container-fluid py-1 px-3">
+        <div className="container-fluid py-1 px-3">
           <div
-            class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4"
+            className="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4"
             id="navbar"
           >
-            <div class="md-auto pe-md-3 justify-content-start">
-              <div class="d-flex">
-                <div class="dropdown d-inline">
-                  <li class="nav-item d-flex align-items-center">
-                    <div class="sidenav-toggler sidenav-toggler-inner d-xl-block d-none">
+            <div className="md-auto pe-md-3 justify-content-start">
+              <div className="d-flex">
+                <div className="dropdown d-inline">
+                  <li className="nav-item d-flex align-items-center">
+                    <div className="sidenav-toggler sidenav-toggler-inner d-xl-block d-none">
                       <a
                         href="javascript:;"
-                        class="nav-link text-body p-0 mt-2"
+                        className="nav-link text-body p-0 mt-2"
                       >
-                        <div class="sidenav-toggler-inner">
-                          <i class="fas fa-chevron-circle-left rotate"></i>
+                        <div className="sidenav-toggler-inner">
+                          <i className="fas fa-chevron-circle-left rotate"></i>
                         </div>
                       </a>
                     </div>
                   </li>
                 </div>
-                <div class="dropdown d-inline" data-cat="date-range">
+                <div className="dropdown d-inline" data-cat="date-range">
                   <a
                     href="javascript:;"
-                    class="btn bg-gradient-primary dropdown-toggle text-doyle"
+                    className="btn bg-gradient-primary dropdown-toggle text-doyle"
                     data-bs-toggle="dropdown"
                     id="navbarDropdownMenuLink2"
                     aria-expanded="false"
@@ -41,12 +49,12 @@ function Navbar() {
                   </a>
                   <div>
                     <ul
-                      class="dropdown-menu dropdown-menu-lg-start px-2 py-3"
+                      className="dropdown-menu dropdown-menu-lg-start px-2 py-3"
                       aria-labelledby="navbarDropdownMenuLink2"
                     >
                       <li>
                         <a
-                          class="dropdown-item border-radius-md"
+                          className="dropdown-item border-radius-md"
                           href="javascript:;"
                           data-filter-value="Last 30 days"
                           data-filter-type="date-range"
@@ -56,7 +64,7 @@ function Navbar() {
                       </li>
                       <li>
                         <a
-                          class="dropdown-item border-radius-md"
+                          className="dropdown-item border-radius-md"
                           href="javascript:;"
                           data-filter-value="Last 60 days"
                           data-filter-type="date-range"
@@ -66,7 +74,7 @@ function Navbar() {
                       </li>
                       <li>
                         <a
-                          class="dropdown-item border-radius-md"
+                          className="dropdown-item border-radius-md"
                           href="javascript:;"
                           data-filter-value="Last 90 days"
                           data-filter-type="date-range"
@@ -76,7 +84,7 @@ function Navbar() {
                       </li>
                       <li>
                         <a
-                          class="dropdown-item border-radius-md"
+                          className="dropdown-item border-radius-md"
                           href="javascript:;"
                           data-filter-value="Last 180 days"
                           data-filter-type="date-range"
@@ -86,7 +94,7 @@ function Navbar() {
                       </li>
                       <li>
                         <a
-                          class="dropdown-item border-radius-md"
+                          className="dropdown-item border-radius-md"
                           href="javascript:;"
                           data-filter-value="custom"
                           data-filter-type="date-range"
@@ -96,11 +104,11 @@ function Navbar() {
                         </a>
                       </li>
                       <li>
-                        <hr class="horizontal my-2 light" />
+                        <hr className="horizontal my-2 light" />
                       </li>
                       <li>
                         <a
-                          class="dropdown-item border-radius-md text-danger"
+                          className="dropdown-item border-radius-md text-danger"
                           href="javascript:;"
                           data-remove-filter="remove-filter"
                         >
@@ -109,20 +117,20 @@ function Navbar() {
                       </li>
                     </ul>
                   </div>
-                  <div class="filter-active d-none">
-                    <a href="javascript:;" class="btn bg-gradient-light">
-                      <span class="filter-value"></span>
-                      <i class="fas fa-times"></i>
+                  <div className="filter-active d-none">
+                    <a href="javascript:;" className="btn bg-gradient-light">
+                      <span className="filter-value"></span>
+                      <i className="fas fa-times"></i>
                     </a>
                   </div>
                 </div>
 
                 {/* <!-- region --> */}
 
-                <div class="dropdown d-inline" data-cat="region">
+                <div className="dropdown d-inline" data-cat="region">
                   <a
                     href="javascript:;"
-                    class="btn bg-gradient-primary dropdown-toggle text-doyle"
+                    className="btn bg-gradient-primary dropdown-toggle text-doyle"
                     data-bs-toggle="dropdown"
                     id="navbarDropdownMenuLink2"
                     aria-expanded="false"
@@ -132,7 +140,7 @@ function Navbar() {
                   </a>
                   <div id="myDropdown">
                     <ul
-                      class="dropdown-menu dropdown-menu-lg-start px-2 py-3"
+                      className="dropdown-menu dropdown-menu-lg-start px-2 py-3"
                       aria-labelledby="navbarDropdownMenuLink2"
                       style={{ border: "1px solid #2c2b59" }}
                     >
@@ -150,7 +158,7 @@ function Navbar() {
                       />
                       <li>
                         <a
-                          class="dropdown-item border-radius-md region-region"
+                          className="dropdown-item border-radius-md region-region"
                           href="javascript:;"
                           data-filter-value-region="WEST"
                           data-filter-type="regions"
@@ -161,7 +169,7 @@ function Navbar() {
                       </li>
                       <li>
                         <a
-                          class="dropdown-item border-radius-md region-region"
+                          className="dropdown-item border-radius-md region-region"
                           href="javascript:;"
                           data-filter-value-region="MIDWEST"
                           data-filter-type="regions"
@@ -172,7 +180,7 @@ function Navbar() {
                       </li>
                       <li>
                         <a
-                          class="dropdown-item border-radius-md region-region"
+                          className="dropdown-item border-radius-md region-region"
                           href="javascript:;"
                           data-filter-value-region="SOUTH"
                           data-filter-type="regions"
@@ -183,7 +191,7 @@ function Navbar() {
                       </li>
                       <li>
                         <a
-                          class="dropdown-item border-radius-md region-region"
+                          className="dropdown-item border-radius-md region-region"
                           href="javascript:;"
                           data-filter-value-region="NORTHEAST"
                           data-filter-type="regions"
@@ -204,542 +212,689 @@ function Navbar() {
                           fontSize: "1em",
                         }}
                       >
-                        <li data-ragion="SOUTH" class="state-list">
+                        <li data-ragion="SOUTH" className="state-list">
                           <input
                             type="checkbox"
                             value="AL"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-AL"
                           />
-                          <label for="select-option-AL" class="state-option">
+                          <label
+                            for="select-option-AL"
+                            className="state-option"
+                          >
                             Alabama
                           </label>
                         </li>
-                        <li data-ragion="WEST" class="state-list">
+                        <li data-ragion="WEST" className="state-list">
                           <input
                             type="checkbox"
                             value="AK"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-AK"
                           />
-                          <label for="select-option-AK" class="state-option">
+                          <label
+                            for="select-option-AK"
+                            className="state-option"
+                          >
                             Alaska
                           </label>
                         </li>
-                        <li data-ragion="WEST" class="state-list">
+                        <li data-ragion="WEST" className="state-list">
                           <input
                             type="checkbox"
                             value="AZ"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-AZ"
                           />
-                          <label for="select-option-AZ" class="state-option">
+                          <label
+                            for="select-option-AZ"
+                            className="state-option"
+                          >
                             Arizona
                           </label>
                         </li>
-                        <li data-ragion="SOUTH" class="state-list">
+                        <li data-ragion="SOUTH" className="state-list">
                           <input
                             type="checkbox"
                             value="AR"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-AR"
                           />
-                          <label for="select-option-AR" class="state-option">
+                          <label
+                            for="select-option-AR"
+                            className="state-option"
+                          >
                             Arkansas
                           </label>
                         </li>
-                        <li data-ragion="WEST" class="state-list">
+                        <li data-ragion="WEST" className="state-list">
                           <input
                             type="checkbox"
                             value="CA"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-CA"
                           />
-                          <label for="select-option-CA" class="state-option">
+                          <label
+                            for="select-option-CA"
+                            className="state-option"
+                          >
                             California
                           </label>
                         </li>
-                        <li data-ragion="WEST" class="state-list">
+                        <li data-ragion="WEST" className="state-list">
                           <input
                             type="checkbox"
                             value="CO"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-CO"
                           />
-                          <label for="select-option-CO" class="state-option">
+                          <label
+                            for="select-option-CO"
+                            className="state-option"
+                          >
                             Colorado
                           </label>
                         </li>
-                        <li data-ragion="NORTHEAST" class="state-list">
+                        <li data-ragion="NORTHEAST" className="state-list">
                           <input
                             type="checkbox"
                             value="CT"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-CT"
                           />
-                          <label for="select-option-CT" class="state-option">
+                          <label
+                            for="select-option-CT"
+                            className="state-option"
+                          >
                             Connecticut
                           </label>
                         </li>
-                        <li data-ragion="SOUTH" class="state-list">
+                        <li data-ragion="SOUTH" className="state-list">
                           <input
                             type="checkbox"
                             value="DE"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-DE"
                           />
-                          <label for="select-option-DE" class="state-option">
+                          <label
+                            for="select-option-DE"
+                            className="state-option"
+                          >
                             Delaware
                           </label>
                         </li>
-                        <li data-ragion="SOUTH" class="state-list">
+                        <li data-ragion="SOUTH" className="state-list">
                           <input
                             type="checkbox"
                             value="FL"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-FL"
                           />
-                          <label for="select-option-FL" class="state-option">
+                          <label
+                            for="select-option-FL"
+                            className="state-option"
+                          >
                             Florida
                           </label>
                         </li>
-                        <li data-ragion="SOUTH" class="state-list">
+                        <li data-ragion="SOUTH" className="state-list">
                           <input
                             type="checkbox"
                             value="GA"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-GA"
                           />
-                          <label for="select-option-GA" class="state-option">
+                          <label
+                            for="select-option-GA"
+                            className="state-option"
+                          >
                             Georgia
                           </label>
                         </li>
-                        <li data-ragion="WEST" class="state-list">
+                        <li data-ragion="WEST" className="state-list">
                           <input
                             type="checkbox"
                             value="HI"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-HI"
                           />
-                          <label for="select-option-HI" class="state-option">
+                          <label
+                            for="select-option-HI"
+                            className="state-option"
+                          >
                             Hawaii
                           </label>
                         </li>
-                        <li data-ragion="WEST" class="state-list">
+                        <li data-ragion="WEST" className="state-list">
                           <input
                             type="checkbox"
                             value="ID"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-ID"
                           />
-                          <label for="select-option-ID" class="state-option">
+                          <label
+                            for="select-option-ID"
+                            className="state-option"
+                          >
                             Idaho
                           </label>
                         </li>
-                        <li data-ragion="MIDWEST" class="state-list">
+                        <li data-ragion="MIDWEST" className="state-list">
                           <input
                             type="checkbox"
                             value="IL"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-IL"
                           />
-                          <label for="select-option-IL" class="state-option">
+                          <label
+                            for="select-option-IL"
+                            className="state-option"
+                          >
                             Illinois
                           </label>
                         </li>
-                        <li data-ragion="MIDWEST" class="state-list">
+                        <li data-ragion="MIDWEST" className="state-list">
                           <input
                             type="checkbox"
                             value="IN"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-IN"
                           />
-                          <label for="select-option-IN" class="state-option">
+                          <label
+                            for="select-option-IN"
+                            className="state-option"
+                          >
                             Indiana
                           </label>
                         </li>
-                        <li data-ragion="MIDWEST" class="state-list">
+                        <li data-ragion="MIDWEST" className="state-list">
                           <input
                             type="checkbox"
                             value="IA"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-IA"
                           />
-                          <label for="select-option-IA" class="state-option">
+                          <label
+                            for="select-option-IA"
+                            className="state-option"
+                          >
                             Iowa
                           </label>
                         </li>
-                        <li data-ragion="MIDWEST" class="state-list">
+                        <li data-ragion="MIDWEST" className="state-list">
                           <input
                             type="checkbox"
                             value="KS"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-KS"
                           />
-                          <label for="select-option-KS" class="state-option">
+                          <label
+                            for="select-option-KS"
+                            className="state-option"
+                          >
                             Kansas
                           </label>
                         </li>
-                        <li data-ragion="SOUTH" class="state-list">
+                        <li data-ragion="SOUTH" className="state-list">
                           <input
                             type="checkbox"
                             value="KY"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-KY"
                           />
-                          <label for="select-option-KY" class="state-option">
+                          <label
+                            for="select-option-KY"
+                            className="state-option"
+                          >
                             Kentucky
                           </label>
                         </li>
-                        <li data-ragion="SOUTH" class="state-list">
+                        <li data-ragion="SOUTH" className="state-list">
                           <input
                             type="checkbox"
                             value="LA"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-LA"
                           />
-                          <label for="select-option-LA" class="state-option">
+                          <label
+                            for="select-option-LA"
+                            className="state-option"
+                          >
                             Louisiana
                           </label>
                         </li>
-                        <li data-ragion="NORTHEAST" class="state-list">
+                        <li data-ragion="NORTHEAST" className="state-list">
                           <input
                             type="checkbox"
                             value="ME"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-ME"
                           />
-                          <label for="select-option-ME" class="state-option">
+                          <label
+                            for="select-option-ME"
+                            className="state-option"
+                          >
                             Maine
                           </label>
                         </li>
-                        <li data-ragion="SOUTH" class="state-list">
+                        <li data-ragion="SOUTH" className="state-list">
                           <input
                             type="checkbox"
                             value="MD"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-MD"
                           />
-                          <label for="select-option-MD" class="state-option">
+                          <label
+                            for="select-option-MD"
+                            className="state-option"
+                          >
                             Maryland
                           </label>
                         </li>
-                        <li data-ragion="NORTHEAST" class="state-list">
+                        <li data-ragion="NORTHEAST" className="state-list">
                           <input
                             type="checkbox"
                             value="MA"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-MA"
                           />
-                          <label for="select-option-MA" class="state-option">
+                          <label
+                            for="select-option-MA"
+                            className="state-option"
+                          >
                             Massachusetts
                           </label>
                         </li>
-                        <li data-ragion="MIDWEST" class="state-list">
+                        <li data-ragion="MIDWEST" className="state-list">
                           <input
                             type="checkbox"
                             value="MI"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-MI"
                           />
-                          <label for="select-option-MI" class="state-option">
+                          <label
+                            for="select-option-MI"
+                            className="state-option"
+                          >
                             Michigan
                           </label>
                         </li>
-                        <li data-ragion="MIDWEST" class="state-list">
+                        <li data-ragion="MIDWEST" className="state-list">
                           <input
                             type="checkbox"
                             value="MN"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-MN"
                           />
-                          <label for="select-option-MN" class="state-option">
+                          <label
+                            for="select-option-MN"
+                            className="state-option"
+                          >
                             Minnesota
                           </label>
                         </li>
-                        <li data-ragion="SOUTH" class="state-list">
+                        <li data-ragion="SOUTH" className="state-list">
                           <input
                             type="checkbox"
                             value="MS"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-MS"
                           />
-                          <label for="select-option-MS" class="state-option">
+                          <label
+                            for="select-option-MS"
+                            className="state-option"
+                          >
                             Mississippi
                           </label>
                         </li>
-                        <li data-ragion="MIDWEST" class="state-list">
+                        <li data-ragion="MIDWEST" className="state-list">
                           <input
                             type="checkbox"
                             value="MO"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-MO"
                           />
-                          <label for="select-option-MO" class="state-option">
+                          <label
+                            for="select-option-MO"
+                            className="state-option"
+                          >
                             Missouri
                           </label>
                         </li>
-                        <li data-ragion="WEST" class="state-list">
+                        <li data-ragion="WEST" className="state-list">
                           <input
                             type="checkbox"
                             value="MT"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-MT"
                           />
-                          <label for="select-option-MT" class="state-option">
+                          <label
+                            for="select-option-MT"
+                            className="state-option"
+                          >
                             Montana
                           </label>
                         </li>
-                        <li data-ragion="MIDWEST" class="state-list">
+                        <li data-ragion="MIDWEST" className="state-list">
                           <input
                             type="checkbox"
                             value="NE"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-NE"
                           />
-                          <label for="select-option-NE" class="state-option">
+                          <label
+                            for="select-option-NE"
+                            className="state-option"
+                          >
                             Nebraska
                           </label>
                         </li>
-                        <li data-ragion="WEST" class="state-list">
+                        <li data-ragion="WEST" className="state-list">
                           <input
                             type="checkbox"
                             value="NV"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-NV"
                           />
-                          <label for="select-option-NV" class="state-option">
+                          <label
+                            for="select-option-NV"
+                            className="state-option"
+                          >
                             Nevada
                           </label>
                         </li>
-                        <li data-ragion="NORTHEAST" class="state-list">
+                        <li data-ragion="NORTHEAST" className="state-list">
                           <input
                             type="checkbox"
                             value="NH"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-NH"
                           />
-                          <label for="select-option-NH" class="state-option">
+                          <label
+                            for="select-option-NH"
+                            className="state-option"
+                          >
                             New Hampshire
                           </label>
                         </li>
-                        <li data-ragion="NORTHEAST" class="state-list">
+                        <li data-ragion="NORTHEAST" className="state-list">
                           <input
                             type="checkbox"
                             value="NJ"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-NJ"
                           />
-                          <label for="select-option-NJ" class="state-option">
+                          <label
+                            for="select-option-NJ"
+                            className="state-option"
+                          >
                             New Jersey
                           </label>
                         </li>
-                        <li data-ragion="WEST" class="state-list">
+                        <li data-ragion="WEST" className="state-list">
                           <input
                             type="checkbox"
                             value="NM"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-NM"
                           />
-                          <label for="select-option-NM" class="state-option">
+                          <label
+                            for="select-option-NM"
+                            className="state-option"
+                          >
                             New Mexico
                           </label>
                         </li>
-                        <li data-ragion="NORTHEAST" class="state-list">
+                        <li data-ragion="NORTHEAST" className="state-list">
                           <input
                             type="checkbox"
                             value="NY"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-NY"
                           />
-                          <label for="select-option-NY" class="state-option">
+                          <label
+                            for="select-option-NY"
+                            className="state-option"
+                          >
                             New York
                           </label>
                         </li>
-                        <li data-ragion="MIDWEST" class="state-list">
+                        <li data-ragion="MIDWEST" className="state-list">
                           <input
                             type="checkbox"
                             value="ND"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-ND"
                           />
-                          <label for="select-option-ND" class="state-option">
+                          <label
+                            for="select-option-ND"
+                            className="state-option"
+                          >
                             North Dakota
                           </label>
                         </li>
-                        <li data-ragion="MIDWEST" class="state-list">
+                        <li data-ragion="MIDWEST" className="state-list">
                           <input
                             type="checkbox"
                             value="OH"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-OH"
                           />
-                          <label for="select-option-OH" class="state-option">
+                          <label
+                            for="select-option-OH"
+                            className="state-option"
+                          >
                             Ohio
                           </label>
                         </li>
-                        <li data-ragion="SOUTH" class="state-list">
+                        <li data-ragion="SOUTH" className="state-list">
                           <input
                             type="checkbox"
                             value="OK"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-OK"
                           />
-                          <label for="select-option-OK" class="state-option">
+                          <label
+                            for="select-option-OK"
+                            className="state-option"
+                          >
                             Oklahoma
                           </label>
                         </li>
-                        <li data-ragion="WEST" class="state-list">
+                        <li data-ragion="WEST" className="state-list">
                           <input
                             type="checkbox"
                             value="OR"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-OR"
                           />
-                          <label for="select-option-OR" class="state-option">
+                          <label
+                            for="select-option-OR"
+                            className="state-option"
+                          >
                             Oregon
                           </label>
                         </li>
-                        <li data-ragion="NORTHEAST" class="state-list">
+                        <li data-ragion="NORTHEAST" className="state-list">
                           <input
                             type="checkbox"
                             value="PA"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-PA"
                           />
-                          <label for="select-option-PA" class="state-option">
+                          <label
+                            for="select-option-PA"
+                            className="state-option"
+                          >
                             Pennsylvania
                           </label>
                         </li>
-                        <li data-ragion="NORTHEAST" class="state-list">
+                        <li data-ragion="NORTHEAST" className="state-list">
                           <input
                             type="checkbox"
                             value="RI"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-RI"
                           />
-                          <label for="select-option-RI" class="state-option">
+                          <label
+                            for="select-option-RI"
+                            className="state-option"
+                          >
                             Rhode Island
                           </label>
                         </li>
-                        <li data-ragion="SOUTH" class="state-list">
+                        <li data-ragion="SOUTH" className="state-list">
                           <input
                             type="checkbox"
                             value="SC"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-SC"
                           />
-                          <label for="select-option-SC" class="state-option">
+                          <label
+                            for="select-option-SC"
+                            className="state-option"
+                          >
                             South Carolina
                           </label>
                         </li>
-                        <li data-ragion="MIDWEST" class="state-list">
+                        <li data-ragion="MIDWEST" className="state-list">
                           <input
                             type="checkbox"
                             value="SD"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-SD"
                           />
-                          <label for="select-option-SD" class="state-option">
+                          <label
+                            for="select-option-SD"
+                            className="state-option"
+                          >
                             South Dakota
                           </label>
                         </li>
-                        <li data-ragion="SOUTH" class="state-list">
+                        <li data-ragion="SOUTH" className="state-list">
                           <input
                             type="checkbox"
                             value="TN"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-TN"
                           />
-                          <label for="select-option-TN" class="state-option">
+                          <label
+                            for="select-option-TN"
+                            className="state-option"
+                          >
                             Tennessee
                           </label>
                         </li>
-                        <li data-ragion="SOUTH" class="state-list">
+                        <li data-ragion="SOUTH" className="state-list">
                           <input
                             type="checkbox"
                             value="TX"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-TX"
                           />
-                          <label for="select-option-TX" class="state-option">
+                          <label
+                            for="select-option-TX"
+                            className="state-option"
+                          >
                             Texas
                           </label>
                         </li>
-                        <li data-ragion="WEST" class="state-list">
+                        <li data-ragion="WEST" className="state-list">
                           <input
                             type="checkbox"
                             value="UT"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-UT"
                           />
-                          <label for="select-option-UT" class="state-option">
+                          <label
+                            for="select-option-UT"
+                            className="state-option"
+                          >
                             Utah
                           </label>
                         </li>
-                        <li data-ragion="NORTHEAST" class="state-list">
+                        <li data-ragion="NORTHEAST" className="state-list">
                           <input
                             type="checkbox"
                             value="VT"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-VT"
                           />
-                          <label for="select-option-VT" class="state-option">
+                          <label
+                            for="select-option-VT"
+                            className="state-option"
+                          >
                             Vermont
                           </label>
                         </li>
-                        <li data-ragion="SOUTH" class="state-list">
+                        <li data-ragion="SOUTH" className="state-list">
                           <input
                             type="checkbox"
                             value="VA"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-VA"
                           />
-                          <label for="select-option-VA" class="state-option">
+                          <label
+                            for="select-option-VA"
+                            className="state-option"
+                          >
                             Virginia
                           </label>
                         </li>
-                        <li data-ragion="WEST" class="state-list">
+                        <li data-ragion="WEST" className="state-list">
                           <input
                             type="checkbox"
                             value="WA"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-WA"
                           />
-                          <label for="select-option-WA" class="state-option">
+                          <label
+                            for="select-option-WA"
+                            className="state-option"
+                          >
                             Washington
                           </label>
                         </li>
-                        <li data-ragion="SOUTH" class="state-list">
+                        <li data-ragion="SOUTH" className="state-list">
                           <input
                             type="checkbox"
                             value="WV"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-WV"
                           />
-                          <label for="select-option-WV" class="state-option">
+                          <label
+                            for="select-option-WV"
+                            className="state-option"
+                          >
                             West Virginia
                           </label>
                         </li>
-                        <li data-ragion="MIDWEST" class="state-list">
+                        <li data-ragion="MIDWEST" className="state-list">
                           <input
                             type="checkbox"
                             value="WI"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-WI"
                           />
-                          <label for="select-option-WI" class="state-option">
+                          <label
+                            for="select-option-WI"
+                            className="state-option"
+                          >
                             Wisconsin
                           </label>
                         </li>
-                        <li data-ragion="WEST" class="state-list">
+                        <li data-ragion="WEST" className="state-list">
                           <input
                             type="checkbox"
                             value="WY"
-                            class="region_options"
+                            className="region_options"
                             id="select-option-WY"
                           />
-                          <label for="select-option-WY" class="state-option">
+                          <label
+                            for="select-option-WY"
+                            className="state-option"
+                          >
                             Wyoming
                           </label>
                         </li>
@@ -747,11 +902,11 @@ function Navbar() {
 
                       <br />
                       <li
-                        class="d-flex"
+                        className="d-flex"
                         style={{ justifyContent: "space around" }}
                       >
                         <a
-                          class="dropdown-item border-radius-md"
+                          className="dropdown-item border-radius-md"
                           href="javascript:;"
                           data-remove-multi-filter="remove-filter"
                         >
@@ -759,7 +914,7 @@ function Navbar() {
                         </a>
 
                         <a
-                          class="dropdown-item border-radius-md"
+                          className="dropdown-item border-radius-md"
                           href="javascript:;"
                           data-remove-filter="remove-filter"
                           style={{
@@ -775,29 +930,32 @@ function Navbar() {
                     </ul>
                   </div>
 
-                  <div class="filter-active d-none" style={{ display: "none" }}>
+                  <div
+                    className="filter-active d-none"
+                    style={{ display: "none" }}
+                  >
                     <a
                       href="javascript:;"
-                      class="btn bg-gradient-primary text-doyle"
+                      className="btn bg-gradient-primary text-doyle"
                     >
-                      <span class="filter-value"></span>
-                      <i class="fas fa-times"></i>
+                      <span className="filter-value"></span>
+                      <i className="fas fa-times"></i>
                     </a>
                   </div>
-                  <div class="filter-activee d-none">
-                    <a href="javascript:;" class="btn bg-gradient-light">
-                      <span class="filter-value"></span>
-                      <i class="fas fa-times"></i>
+                  <div className="filter-activee d-none">
+                    <a href="javascript:;" className="btn bg-gradient-light">
+                      <span className="filter-value"></span>
+                      <i className="fas fa-times"></i>
                     </a>
                   </div>
                 </div>
 
                 {/* <!-- region --> */}
 
-                <div class="dropdown d-inline" data-cat="segment">
+                <div className="dropdown d-inline" data-cat="segment">
                   <a
                     href="javascript:;"
-                    class="btn bg-gradient-primary dropdown-toggle text-doyle"
+                    className="btn bg-gradient-primary dropdown-toggle text-doyle"
                     data-bs-toggle="dropdown"
                     id="navbarDropdownMenuLink2"
                     aria-expanded="false"
@@ -806,12 +964,12 @@ function Navbar() {
                   </a>
                   <div>
                     <ul
-                      class="dropdown-menu dropdown-menu-lg-start px-2 py-3"
+                      className="dropdown-menu dropdown-menu-lg-start px-2 py-3"
                       aria-labelledby="navbarDropdownMenuLink2"
                     >
                       <li>
                         <a
-                          class="dropdown-item border-radius-md"
+                          className="dropdown-item border-radius-md"
                           href="javascript:;"
                           data-filter-value="Bio-naive"
                           data-filter-type="segment"
@@ -821,7 +979,7 @@ function Navbar() {
                       </li>
                       <li>
                         <a
-                          class="dropdown-item border-radius-md"
+                          className="dropdown-item border-radius-md"
                           href="javascript:;"
                           data-filter-value="Bio-experienced"
                           data-filter-type="segment"
@@ -830,11 +988,11 @@ function Navbar() {
                         </a>
                       </li>
                       <li>
-                        <hr class="horizontal my-2 light" />
+                        <hr className="horizontal my-2 light" />
                       </li>
                       <li>
                         <a
-                          class="dropdown-item border-radius-md text-danger"
+                          className="dropdown-item border-radius-md text-danger"
                           href="javascript:;"
                           data-remove-filter="remove-filter"
                         >
@@ -843,18 +1001,18 @@ function Navbar() {
                       </li>
                     </ul>
                   </div>
-                  <div class="filter-active d-none">
-                    <a href="javascript:;" class="btn bg-gradient-light">
-                      <span class="filter-value"></span>
+                  <div className="filter-active d-none">
+                    <a href="javascript:;" className="btn bg-gradient-light">
+                      <span className="filter-value"></span>
                       Patients
-                      <i class="fas fa-times"></i>
+                      <i className="fas fa-times"></i>
                     </a>
                   </div>
                 </div>
-                <div class="dropdown d-inline" data-cat="condition">
+                <div className="dropdown d-inline" data-cat="condition">
                   <a
                     href="javascript:;"
-                    class="btn bg-gradient-primary dropdown-toggle text-doyle"
+                    className="btn bg-gradient-primary dropdown-toggle text-doyle"
                     data-bs-toggle="dropdown"
                     id="navbarDropdownMenuLink2"
                     aria-expanded="false"
@@ -863,12 +1021,12 @@ function Navbar() {
                   </a>
                   <div>
                     <ul
-                      class="dropdown-menu dropdown-menu-lg-start px-2 py-3"
+                      className="dropdown-menu dropdown-menu-lg-start px-2 py-3"
                       aria-labelledby="navbarDropdownMenuLink2"
                     >
                       <li>
                         <a
-                          class="dropdown-item border-radius-md"
+                          className="dropdown-item border-radius-md"
                           href="javascript:;"
                           data-filter-value="PSO"
                           data-filter-type="condition"
@@ -878,7 +1036,7 @@ function Navbar() {
                       </li>
                       <li>
                         <a
-                          class="dropdown-item border-radius-md"
+                          className="dropdown-item border-radius-md"
                           href="javascript:;"
                           data-filter-value="PSA"
                           data-filter-type="condition"
@@ -888,7 +1046,7 @@ function Navbar() {
                       </li>
                       <li>
                         <a
-                          class="dropdown-item border-radius-md"
+                          className="dropdown-item border-radius-md"
                           href="javascript:;"
                           data-filter-value="GI"
                           data-filter-type="condition"
@@ -897,11 +1055,11 @@ function Navbar() {
                         </a>
                       </li>
                       <li>
-                        <hr class="horizontal my-2 light" />
+                        <hr className="horizontal my-2 light" />
                       </li>
                       <li>
                         <a
-                          class="dropdown-item border-radius-md text-danger"
+                          className="dropdown-item border-radius-md text-danger"
                           href="javascript:;"
                         >
                           Remove Filter
@@ -909,17 +1067,17 @@ function Navbar() {
                       </li>
                     </ul>
                   </div>
-                  <div class="filter-active d-none">
-                    <a href="javascript:;" class="btn bg-gradient-light">
-                      <span class="filter-value"></span>
-                      <i class="fas fa-times"></i>
+                  <div className="filter-active d-none">
+                    <a href="javascript:;" className="btn bg-gradient-light">
+                      <span className="filter-value"></span>
+                      <i className="fas fa-times"></i>
                     </a>
                   </div>
                 </div>
-                <div class="dropdown d-inline d-none hideall">
+                <div className="dropdown d-inline d-none hideall">
                   <a
                     href=" javascript:;"
-                    class="btn text-pink-50"
+                    className="btn text-pink-50"
                     data-bs-toggle="dropdown"
                     id="navbarDropdownMenuLink2"
                     aria-expanded="false"
@@ -929,26 +1087,26 @@ function Navbar() {
                 </div>
               </div>
             </div>
-            <ul class="navbar-nav ms-auto justify-content-end">
-              <li class="nav-item d-flex align-items-center">
-                <div class="form-check form-switch ps-0 d-xl-block d-none">
+            <ul className="navbar-nav ms-auto justify-content-end">
+              <li className="nav-item d-flex align-items-center">
+                <div className="form-check form-switch ps-0 d-xl-block d-none">
                   <input
-                    class="form-check-input ms-3"
+                    className="form-check-input ms-3"
                     type="checkbox"
                     id="dark-version"
                     checked="true"
                     onClick="darkMode(this)"
                   />
                 </div>
-                <span class="d-sm-inline ms-2 d-none">Light/Dark</span>
+                <span className="d-sm-inline ms-2 d-none">Light/Dark</span>
               </li>
-              <li class="nav-item ms-3 d-flex align-items-center">
+              <li className="nav-item ms-3 d-flex align-items-center">
                 <a
                   href="../../pages/authentication/signin/illustration.html"
-                  class="nav-link text-white font-weight-bold px-0"
+                  className="nav-link text-white font-weight-bold px-0"
                 >
-                  <i class="fa fa-user me-1"></i>
-                  <span class="d-sm-inline d-none">Sign Out</span>
+                  <i className="fa fa-user me-1"></i>
+                  <span className="d-sm-inline d-none">Sign Out</span>
                 </a>
               </li>
             </ul>

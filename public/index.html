@@ -85,7 +85,7 @@
     ></script>
     <script src="assets/js/jspdf.debug.js"></script>
 
-    <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script> -->
     <style>
       button.dropdown-lg-responsive {
         display: inline-block !important;
@@ -120,8 +120,8 @@
     <script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="assets/js/plugins/smooth-scrollbar.min.js"></script>
     <script src="assets/js/plugins/chartjs.min.js"></script>
-    <!-- <script src="assets/js/home-driver.js"></script> -->
-    <script src="assets/js/home-overview.js"></script>
+    <script src="assets/js/home-driver.js"></script>
+    <!-- <script src="assets/js/home-overview.js"></script> -->
 
     <script>
       var win = navigator.platform.indexOf("Win") > -1;
@@ -171,7 +171,13 @@
       });
     </script>
     <script>
-      $(".rotate").click(function () {
+      // $(".rotate").click(function () {
+      //   console.log("asd");
+      //   alert("Asd");
+      //   $(this).toggleClass("down");
+      // });
+
+      $(".rotate").on("click", function () {
         console.log("asd");
         alert("Asd");
         $(this).toggleClass("down");
