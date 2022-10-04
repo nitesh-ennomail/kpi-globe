@@ -1,6 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Sidebar(props) {
+  const nameUrl = props;
+
+  console.log(nameUrl);
   return (
     <React.Fragment>
       <aside
@@ -72,28 +76,25 @@ function Sidebar(props) {
                   <li className="nav-item">
                     <ul className="nav nav-sm flex-column">
                       <li className="nav-item">
-                        <a
-                          className="nav-link active"
-                          href="../../pages/home/home-overview.html"
+                        <Link
+                          className={`nav-link ${true ? "active" : ""}`}
+                          to="/home/overview"
                         >
                           <span className="sidenav-normal"> Overview </span>
-                        </a>
+                        </Link>
                       </li>
                       <li className="nav-item">
-                        <a
-                          className="nav-link"
-                          href="../../pages/home/home-drivers.html"
+                        <Link
+                          className={`nav-link ${true ? "active" : ""}`}
+                          to="/home/driver"
                         >
                           <span className="sidenav-normal"> Drivers </span>
-                        </a>
+                        </Link>
                       </li>
                       <li className="nav-item">
-                        <a
-                          className="nav-link"
-                          href="../../pages/home/home-engagement.html"
-                        >
+                        <Link className="nav-link" to="/home/engagement">
                           <span className="sidenav-normal"> Engagement </span>
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </li>

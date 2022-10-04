@@ -1,20 +1,20 @@
-let rootSankey,
-  rootRadar,
-  chartRadar,
-  containerSankey,
-  SeriesSankey,
-  xAxisRadar,
-  labelRadar,
-  clockHandRadar,
-  bulletRadar,
-  axisDataItemRadar,
-  axisRange1Radar,
-  axisRange0Radar,
-  chartjsBar,
-  rootWord,
-  containerWord,
-  seriesWord,
-  chartPageView;
+// let rootSankey,
+//   rootRadar,
+//   chartRadar,
+//   containerSankey,
+//   SeriesSankey,
+//   xAxisRadar,
+//   labelRadar,
+//   clockHandRadar,
+//   bulletRadar,
+//   axisDataItemRadar,
+//   axisRange1Radar,
+//   axisRange0Radar,
+//   chartjsBar,
+//   rootWord,
+//   containerWord,
+//   seriesWord,
+//   chartPageView;
 am5.ready(function () {
   am5.addLicense("AM5C329334656");
 
@@ -628,6 +628,8 @@ am5.ready(function () {
   //Add event listener
   document.getElementById("toPdf").addEventListener("click", getPdf);
   document.getElementById("toPng").addEventListener("click", getPng);
+  document.getElementById("addReport").addEventListener("click", addReport);
+  document.getElementById("addReport1").addEventListener("click", addReport1);
 
   html2canvas(document.querySelector("#f1")).then((canvas) => {
     document.querySelector("#f2").append(canvas);
@@ -639,6 +641,18 @@ am5.ready(function () {
 
   // funnel chart End
 });
+
+function addReport() {
+  $("#successReport").removeClass("d-none").fadeTo(50, 100);
+  $(".alert").fadeTo(1500, 0).slideUp(1500, 0);
+}
+function addReport1() {
+  $("#successReport1").removeClass("d-none").fadeTo(50, 100);
+  $(".alert")
+    // .animate({left: '250px'})
+    .fadeTo(1500, 0)
+    .slideUp(1500, 0);
+}
 
 //download funnel chart
 function getPdf() {
