@@ -1,4 +1,4 @@
-// let funnelGraph, chartDevice, chartSignupTime;
+var funnelGraph, chartDevice, chartSignupTime;
 am5.ready(function () {
   am5.addLicense("AM5C329334656");
 
