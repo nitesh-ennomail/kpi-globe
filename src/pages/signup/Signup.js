@@ -2,14 +2,14 @@ import React, { useEffect } from "react";
 import Navbar from "../comman/Navbar";
 import Sidebar from "../comman/Sidebar";
 import { useNavigate, useParams, Outlet } from "react-router-dom";
-function Home() {
+function Signup() {
   const navitage = useNavigate();
   useEffect(() => {
-    navitage("/home/overview");
+    navitage("/signup/overview");
   }, []);
   return (
     <React.Fragment>
-      <Sidebar isActive={true} path={"home"} />
+      <Sidebar isActive={true} path={"signup"} />
       <main className="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
         <Navbar />
         <Outlet />
@@ -18,4 +18,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Signup;

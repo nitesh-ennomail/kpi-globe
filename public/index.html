@@ -42,14 +42,20 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
     ></script>
-    <!-- <link
+    <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
-    /> -->
+    />
     <link rel="stylesheet" href="/assets/css/custom.css" />
     <!-- Funnel.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"
+      charset="utf-8"
+    ></script> -->
+
     <link
       rel="stylesheet"
       type="text/css"
@@ -134,8 +140,9 @@
         Scrollbar.init(document.querySelector("#sidenav-scrollbar"), options);
       }
     </script>
-    <script>
+    <!-- <script>
       $(".value").each(function () {
+        console.log("ASDASDASDASD");
         var text = $(this).text();
         var textPlus10 = text * 1.65;
         $(this)
@@ -151,7 +158,7 @@
           "animation-delay": i * 0.05 + "s",
         });
       });
-    </script>
+    </script> -->
     <script>
       if (document.querySelector(".datepicker")) {
         flatpickr(".datepicker", {
@@ -172,17 +179,11 @@
           .val($(this).text());
       });
     </script>
-    <script>
-      // $(".rotate").click(function () {
-      //   console.log("asd");
-      //   alert("Asd");
-      //   $(this).toggleClass("down");
-      // });
-
+    <!-- <script>
       $(".rotate").on("click", function () {
         $(this).toggleClass("down");
       });
-    </script>
+    </script> -->
     <!-- Github buttons -->
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="/assets/js/soft-ui-dashboard.min.js?v=1.0.9"></script>

@@ -1,13 +1,16 @@
 import React, { useLayoutEffect } from "react";
+import { home_overview, d3_min } from "../comman/Constant";
 import { appendScript } from "../utils/appendScript";
 import { removeScript } from "../utils/removeScript";
 
 function HomeOverview(props) {
-  const scriptUri = "/assets/js/home-overview.js";
   useLayoutEffect(() => {
-    appendScript(scriptUri);
+    appendScript(home_overview);
+    appendScript(d3_min);
+
     return () => {
-      removeScript(scriptUri);
+      removeScript(home_overview);
+      removeScript(d3_min);
     };
   }, []);
 

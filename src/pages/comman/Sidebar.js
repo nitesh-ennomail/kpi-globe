@@ -121,12 +121,12 @@ function Sidebar(props) {
                   <li className="nav-item">
                     <ul className="nav nav-sm flex-column">
                       <li className="nav-item">
-                        <a
-                          className="nav-link"
-                          href="../../pages/signup/signup-overview.html"
+                        <Link
+                          className={`nav-link ${true ? "active" : ""}`}
+                          to="/signup/overview"
                         >
                           <span className="sidenav-normal"> Overview </span>
-                        </a>
+                        </Link>
                       </li>
                       <li className="nav-item">
                         <a
