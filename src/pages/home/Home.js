@@ -5,7 +5,7 @@ import { useNavigate, useParams, Outlet } from "react-router-dom";
 function Home() {
   const navitage = useNavigate();
   useEffect(() => {
-    navitage("/home/overview");
+    // navitage("/home/overview");
   }, []);
   return (
     <React.Fragment>

@@ -1,4 +1,4 @@
-let rootSankey,
+var rootSankey,
   rootRadar,
   chartRadar,
   containerSankey,

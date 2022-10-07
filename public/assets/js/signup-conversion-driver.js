@@ -1,4 +1,4 @@
-let bubbleChart,
+var bubbleChart,
   bubbleCats,
   bubbleDates,
   rootBubbles,
@@ -10,10 +10,13 @@ let bubbleChart,
   seriesBubbles1,
   circleTemplate,
   bulletBubbles,
+  circleTemplateLabel,
+  am5themes_Animated,
   categories;
-
+import * as am5 from "@amcharts/amcharts5";
+import * as am5xy from "@amcharts/amcharts5/xy";
 am5.ready(function () {
-  am5.addLicense("AM5C329334656");
+  // am5.addLicense("AM5C329334656");
 
   circleTemplate = am5.Template.new({});
   circleTemplateLabel = am5.Template.new({});
@@ -165,7 +168,7 @@ am5.ready(function () {
 
   // Add export menu
 
-  exporting = am5plugins_exporting.Exporting.new(rootBubbles, {
+  var exporting = am5plugins_exporting.Exporting.new(rootBubbles, {
     filePrefix: "Sign Ups By Source",
     pngOptions: {
       maintainPixelRatio: true,

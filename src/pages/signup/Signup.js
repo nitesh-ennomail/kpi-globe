@@ -5,7 +5,8 @@ import { useNavigate, useParams, Outlet } from "react-router-dom";
 function Signup() {
   const navitage = useNavigate();
   useEffect(() => {
-    navitage("/signup/overview");
+    console.log(window.location.pathname);
+    // navitage("/signup/overview");
   }, []);
   return (
     <React.Fragment>

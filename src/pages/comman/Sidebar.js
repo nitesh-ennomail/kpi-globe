@@ -129,12 +129,9 @@ function Sidebar(props) {
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <a
-                          className="nav-link"
-                          href="../../pages/signup/signup-conversion-drivers.html"
-                        >
+                        <Link className="nav-link" to="/signup/driver">
                           <span className="sidenav-normal"> Drivers </span>
-                        </a>
+                        </Link>
                       </li>
                       <li className="nav-item">
                         <a
