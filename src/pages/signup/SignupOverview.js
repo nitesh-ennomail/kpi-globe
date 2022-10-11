@@ -102,7 +102,7 @@ function SignupOverview(props) {
 									</div>
 								</div>
 								<div id="f1" className="funnel funnel-container m-3"></div>
-								{/* <div id="f2" className="d-none"></div> */}
+								<div id="f2" className="d-none"></div>
 							</div>
 						</div>
 					</div>

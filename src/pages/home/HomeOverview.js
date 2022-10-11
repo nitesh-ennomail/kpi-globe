@@ -5,13 +5,13 @@ import { removeScript } from "../utils/removeScript";
 
 function HomeOverview(props) {
 	useLayoutEffect(() => {
-		appendScript(soft_ui__);
-		appendScript(soft_ui);
+		// appendScript(soft_ui__);
+		// appendScript(soft_ui);
 		appendScript(home_overview);
 		appendScript(d3_min);
 		return () => {
-			removeScript(soft_ui__);
-			removeScript(soft_ui);
+			// removeScript(soft_ui__);
+			// removeScript(soft_ui);
 			removeScript(home_overview);
 			removeScript(d3_min);
 		};
