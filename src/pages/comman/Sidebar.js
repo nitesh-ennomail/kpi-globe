@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Sidebar(props) {
+	const [activeIcon, setActiveIcon] = useState(
+		"icon icon-shape shadow border-radius-md text-center d-flex align-items-center justify-content-center me-2"
+	);
+	const [activeTab, setactiveTab] = useState(
+		"fa-solid fa-house fa-fw opacity-10 text-2xl d-flex align-items-center justify-content-center"
+	);
+
 	const nameUrl = props;
 	let activeUrl = window.location.pathname;
 
@@ -60,9 +67,16 @@ function Sidebar(props) {
 								aria-controls="dashboardsExamples"
 								role="button"
 								aria-expanded="true">
-								<div className="icon icon-shape shadow border-radius-md text-center d-flex bg-gradient-primary align-items-center justify-content-center me-2">
+								<div
+									className={`${activeIcon} ${
+										nameUrl.path == "home" ? "bg-gradient-primary" : ""
+									}`}>
 									<i
-										className="fa-solid fa-house fa-fw opacity-10 text-2xl text-white d-flex align-items-center justify-content-center"
+										className={`${activeTab} ${
+											nameUrl.path == "home"
+												? "text-white"
+												: "text-gradient text-primary"
+										}`}
 										aria-hidden="true"></i>
 								</div>
 								<span className="nav-link-text ms-1">Home</span>
@@ -115,8 +129,16 @@ function Sidebar(props) {
 								aria-controls="pagesExamples"
 								role="button"
 								aria-expanded="false">
-								<div className="icon icon-shape shadow border-radius-md text-center d-flex align-items-center justify-content-center me-2">
-									<i className="fa-solid fa-pen-line fa-fw opacity-10 text-2xl text-gradient text-primary d-flex align-items-center justify-content-center"></i>
+								<div
+									className={`${activeIcon} ${
+										nameUrl.path == "signup" ? "bg-gradient-primary" : ""
+									}`}>
+									<i
+										className={`${activeTab} ${
+											nameUrl.path == "signup"
+												? "text-white"
+												: "text-gradient text-primary"
+										}`}></i>
 								</div>
 								<span className="nav-link-text ms-1">Sign Up</span>
 							</a>
