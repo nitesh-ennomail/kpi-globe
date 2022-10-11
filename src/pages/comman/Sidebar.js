@@ -36,7 +36,7 @@ function Sidebar(props) {
 					className="collapse navbar-collapse w-auto h-auto"
 					id="sidenav-collapse-main">
 					<ul className="navbar-nav">
-						<li className="nav-item">
+						{/* <li className="nav-item">
 							<a href="../../pages/dev-pages/account/settings.html">
 								<div className="nav-link p-3">
 									<img
@@ -48,7 +48,7 @@ function Sidebar(props) {
 									</div>
 								</div>
 							</a>
-						</li>
+						</li> */}
 					</ul>
 					{/* <!--  Home --> */}
 					<ul className="navbar-nav">

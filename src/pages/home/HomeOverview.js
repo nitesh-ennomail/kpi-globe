@@ -207,7 +207,7 @@ function HomeOverview(props) {
 										<div className="ms-auto">
 											<div className="dropdown pe-2">
 												<a
-													href="javascript:;"
+													// href="javascript:;"
 													className="text-white ps-4"
 													id="dropdownCard"
 													data-bs-toggle="dropdown"
@@ -220,7 +220,8 @@ function HomeOverview(props) {
 													<li>
 														<a
 															className="dropdown-item border-radius-md"
-															href="javascript:;">
+															// href="javascript:;"
+														>
 															<i className="fa-regular fa-share me-2" /> Share
 															Report
 														</a>
@@ -228,7 +229,7 @@ function HomeOverview(props) {
 													<li>
 														<a
 															className="dropdown-item border-radius-md"
-															href="javascript:;"
+															// href="javascript:;"
 															id="addReport">
 															<i className="fa-regular fa-add me-2" /> Add to
 															Report
@@ -245,7 +246,7 @@ function HomeOverview(props) {
 													<li>
 														<a
 															className="dropdown-item border-radius-md"
-															href="javascript:;"
+															// href="javascript:;"
 															id="toPdf">
 															<i className="fa-regular fa-file-arrow-down me-2" />
 															Download PDF
@@ -256,6 +257,7 @@ function HomeOverview(props) {
 										</div>
 									</div>
 								</div>
+								{/* <FunnelChart /> */}
 								<div id="f1" className="funnel funnel-container mt-4 mb-6" />
 								<div id="f2" className="d-none" />
 							</div>
@@ -291,7 +293,7 @@ function HomeOverview(props) {
 									<div className="ms-auto">
 										<div className="dropdown pe-2">
 											<a
-												href="javascript:;"
+												// href="javascript:;"
 												className="text-white ps-4"
 												id="dropdownCard"
 												data-bs-toggle="dropdown"
@@ -304,7 +306,8 @@ function HomeOverview(props) {
 												<li>
 													<a
 														className="dropdown-item border-radius-md"
-														href="javascript:;">
+														// href="javascript:;"
+													>
 														<i className="fa-regular fa-share me-2" /> Share
 														Report
 													</a>
@@ -312,7 +315,7 @@ function HomeOverview(props) {
 												<li>
 													<a
 														className="dropdown-item border-radius-md"
-														href="javascript:;"
+														// href="javascript:;"
 														id="addReport1">
 														<i className="fa-regular fa-add me-2" /> Add to
 														Report
@@ -321,7 +324,8 @@ function HomeOverview(props) {
 												<li>
 													<a
 														className="dropdown-item border-radius-md"
-														href="javascript:;">
+														// href="javascript:;"
+													>
 														<i className="fa-regular fa-file-arrow-down me-2" />
 														Download PNG
 													</a>
@@ -329,7 +333,8 @@ function HomeOverview(props) {
 												<li>
 													<a
 														className="dropdown-item border-radius-md"
-														href="javascript:;">
+														// href="javascript:;"
+													>
 														<i className="fa-regular fa-file-arrow-down me-2" />
 														Download PDF
 													</a>
@@ -364,7 +369,7 @@ function HomeOverview(props) {
 									<div className="ms-auto">
 										<div className="dropdown pe-2">
 											<a
-												href="javascript:;"
+												// href="javascript:;"
 												className="text-white ps-4"
 												id="dropdownCard"
 												data-bs-toggle="dropdown"
@@ -377,7 +382,8 @@ function HomeOverview(props) {
 												<li>
 													<a
 														className="dropdown-item border-radius-md"
-														href="javascript:;">
+														// href="javascript:;"
+													>
 														<i className="fa-regular fa-share me-2" /> Share
 														Report
 													</a>
@@ -385,7 +391,8 @@ function HomeOverview(props) {
 												<li>
 													<a
 														className="dropdown-item border-radius-md"
-														href="javascript:;">
+														// href="javascript:;"
+													>
 														<i className="fa-regular fa-add me-2" /> Add to
 														Report
 													</a>
@@ -393,8 +400,8 @@ function HomeOverview(props) {
 												<li>
 													<a
 														className="dropdown-item border-radius-md"
-														href="javascript:;"
-														onclick="enrollChartPng()">
+														// href="javascript:;"
+														onClick="enrollChartPng()">
 														<i className="fa-regular fa-file-arrow-down me-2" />
 														Download PNG
 													</a>
@@ -402,8 +409,8 @@ function HomeOverview(props) {
 												<li>
 													<a
 														className="dropdown-item border-radius-md"
-														href="javascript:;"
-														onclick="enrollChartPdf()">
+														// href="javascript:;"
+														onClick="enrollChartPdf()">
 														<i className="fa-regular fa-file-arrow-down me-2" />
 														Download PDF
 													</a>
@@ -432,7 +439,7 @@ function HomeOverview(props) {
 									<div className="ms-auto">
 										<div className="dropdown pe-2">
 											<a
-												href="javascript:;"
+												// href="javascript:;"
 												className="text-white ps-4"
 												id="dropdownCard"
 												data-bs-toggle="dropdown"
@@ -445,7 +452,8 @@ function HomeOverview(props) {
 												<li>
 													<a
 														className="dropdown-item border-radius-md"
-														href="javascript:;">
+														// href="javascript:;"
+													>
 														<i className="fa-regular fa-share me-2" /> Share
 														Report
 													</a>
@@ -453,7 +461,8 @@ function HomeOverview(props) {
 												<li>
 													<a
 														className="dropdown-item border-radius-md"
-														href="javascript:;">
+														// href="javascript:;"
+													>
 														<i className="fa-regular fa-add me-2" /> Add to
 														Report
 													</a>
@@ -461,8 +470,8 @@ function HomeOverview(props) {
 												<li>
 													<a
 														className="dropdown-item border-radius-md"
-														href="javascript:;"
-														onclick="downloadPNGChart();">
+														// href="javascript:;"
+														onClick="downloadPNGChart();">
 														<i className="fa-regular fa-file-arrow-down me-2" />
 														Download PNG
 													</a>
@@ -470,8 +479,8 @@ function HomeOverview(props) {
 												<li>
 													<a
 														className="dropdown-item border-radius-md"
-														href="javascript:;"
-														onclick="downloadPDFChart();">
+														// href="javascript:;"
+														onClick="downloadPDFChart();">
 														<i className="fa-regular fa-file-arrow-down me-2" />
 														Download PDF
 													</a>

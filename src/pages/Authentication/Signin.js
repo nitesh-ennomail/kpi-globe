@@ -2,7 +2,7 @@ import React, { useLayoutEffect } from "react";
 import { appendScript } from "../utils/appendScript";
 import { removeScript } from "../utils/removeScript";
 import { signin } from "../utils/signinApi";
-
+import $ from "jquery";
 function Signin() {
 	useLayoutEffect(() => {
 		appendScript(signin);
@@ -10,6 +10,33 @@ function Signin() {
 			removeScript(signin);
 		};
 	}, []);
+
+	const handleSubmit = (event) => {
+		// POST request using fetch inside useEffect React hook
+		event.preventDefault();
+		var { email, password } = document.forms[0];
+		// var formdata = document.forms[0];
+
+		fetch("https://kpi-tool.psglobalgroup.com/api/action-user-login.php", {
+			method: "POST",
+			contentType: false,
+			processData: false,
+			body: JSON.stringify({ email: email.value, password: password.value }),
+		})
+			.then((response) => {
+				if (response != 0) {
+					alert("login successful");
+					localStorage.setItem("userID", response);
+					console.log("response", response);
+				} else {
+					alert("Invalid username or password. Please try again");
+				}
+			})
+			.catch((error) => {
+				console.log("error", error);
+			});
+	};
+
 	return (
 		<main className="main-content  mt-0">
 			<section>
@@ -25,7 +52,7 @@ function Signin() {
 										</p>
 									</div>
 									<div className="card-body">
-										<form role="form" id="login-form">
+										<form role="form" id="login-form" onSubmit={handleSubmit}>
 											<div className="mb-3">
 												<input
 													type="email"
@@ -58,11 +85,16 @@ function Signin() {
 											</div>
 											<div className="text-center">
 												{/* <a class="text-doyle" href="../../dashboards/crm.html"> */}
-												<button
+												{/* <button
 													type="submit"
 													className="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">
 													Sign In
-												</button>
+												</button> */}
+
+												<input
+													type="submit"
+													className="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0"
+												/>
 												{/* </a> */}
 											</div>
 										</form>
