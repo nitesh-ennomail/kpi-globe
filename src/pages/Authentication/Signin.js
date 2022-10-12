@@ -2,8 +2,10 @@ import React, { useLayoutEffect } from "react";
 import { appendScript } from "../utils/appendScript";
 import { removeScript } from "../utils/removeScript";
 import { signin } from "../utils/signinApi";
+import { useNavigate } from "react-router-dom";
 import $ from "jquery";
 function Signin() {
+	const navitage = useNavigate();
 	useLayoutEffect(() => {
 		appendScript(signin);
 		return () => {
@@ -15,8 +17,6 @@ function Signin() {
 		// POST request using fetch inside useEffect React hook
 		event.preventDefault();
 		var { email, password } = document.forms[0];
-		// var formdata = document.forms[0];
-
 		fetch("https://kpi-tool.psglobalgroup.com/api/action-user-login.php", {
 			method: "POST",
 			contentType: false,
@@ -26,8 +26,11 @@ function Signin() {
 			.then((response) => {
 				if (response != 0) {
 					alert("login successful");
-					localStorage.setItem("userID", response);
+					// localStorage.setItem("userID", response);
+					localStorage.setItem("userID", 2);
 					console.log("response", response);
+					// window.location = "/dashboards/crm.html";
+					navitage("/home/overview");
 				} else {
 					alert("Invalid username or password. Please try again");
 				}

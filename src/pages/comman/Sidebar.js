@@ -6,7 +6,7 @@ function Sidebar(props) {
 		"icon icon-shape shadow border-radius-md text-center d-flex align-items-center justify-content-center me-2"
 	);
 	const [activeTab, setactiveTab] = useState(
-		"fa-solid fa-house fa-fw opacity-10 text-2xl d-flex align-items-center justify-content-center"
+		"opacity-10 text-2xl d-flex align-items-center justify-content-center"
 	);
 
 	const nameUrl = props;
@@ -74,8 +74,8 @@ function Sidebar(props) {
 									<i
 										className={`${activeTab} ${
 											nameUrl.path == "home"
-												? "text-white"
-												: "text-gradient text-primary"
+												? "fa-solid fa-house fa-fw text-white"
+												: "fa-solid fa-house fa-fw text-gradient text-primary"
 										}`}
 										aria-hidden="true"></i>
 								</div>
@@ -136,8 +136,8 @@ function Sidebar(props) {
 									<i
 										className={`${activeTab} ${
 											nameUrl.path == "signup"
-												? "text-white"
-												: "text-gradient text-primary"
+												? "fa-solid fa-pen-line fa-fw text-white"
+												: "fa-solid fa-pen-line fa-fw text-gradient text-primary"
 										}`}></i>
 								</div>
 								<span className="nav-link-text ms-1">Sign Up</span>
