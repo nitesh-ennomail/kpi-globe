@@ -568,13 +568,13 @@
   }
 /* no chart access css*/
 
-tr:nth-child(odd) {
+/* tr:nth-child(odd) {
     background-color: #f2f2f2;
     text-align: left;
   }
   tr:nth-child(odd) span {
     color: #000 !important;
-  }
+  } */
   .table {
     border-collapse: none;
   }

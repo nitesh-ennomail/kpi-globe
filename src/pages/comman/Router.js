@@ -10,6 +10,7 @@ import SignupOverview from "../signup/SignupOverview";
 import SignupDriver from "../signup/SignupDriver";
 import Signin from "../Authentication/Signin";
 import SignupEngagement from "../signup/SignupEngagement";
+import SignupDemographics from "../signup/SignupDemographics";
 function Router() {
 	return (
 		<BrowserRouter>
@@ -28,8 +29,8 @@ function Router() {
 					<Route path="overview" element={<SignupOverview />} />
 					<Route path="driver" element={<SignupDriver />} />
 					<Route path="engagement" element={<SignupEngagement />} />
-					{/* <Route path="demographics" element={<SignupDemographics />} />
-          <Route path="hcp-performance" element={<SignupHcpPerformance />} /> */}
+					<Route path="demographics" element={<SignupDemographics />} />
+					{/* <Route path="hcp-performance" element={<SignupHcpPerformance />} /> */}
 				</Route>
 
 				<Route

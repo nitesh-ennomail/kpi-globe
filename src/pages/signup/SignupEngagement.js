@@ -8,7 +8,7 @@ function SignupEngagement(props) {
 	useLayoutEffect(() => {
 		appendScript(signup_engagement);
 		return () => {
-			// removeScript(signup_engagement);
+			removeScript(signup_engagement);
 		};
 	}, []);
 

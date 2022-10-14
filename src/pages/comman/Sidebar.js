@@ -168,11 +168,6 @@ function Sidebar(props) {
 												</Link>
 											</li>
 											<li className="nav-item">
-												{/* <a
-													className="nav-link"
-													href="../../pages/signup/signup-drivers.html">
-													<span className="sidenav-normal"> Engagement </span>
-												</a> */}
 												<Link
 													className={`nav-link ${
 														activeUrl == "/signup/engagement" ? "active" : ""
@@ -182,11 +177,18 @@ function Sidebar(props) {
 												</Link>
 											</li>
 											<li className="nav-item">
-												<a
+												{/* <a
 													className="nav-link"
 													href="../../pages/signup/signup-demographics.html">
 													<span className="sidenav-normal"> Demographics </span>
-												</a>
+												</a> */}
+												<Link
+													className={`nav-link ${
+														activeUrl == "/signup/demographics" ? "active" : ""
+													}`}
+													to="/signup/demographics">
+													<span className="sidenav-normal"> Demographics </span>
+												</Link>
 											</li>
 											<li className="nav-item">
 												<a

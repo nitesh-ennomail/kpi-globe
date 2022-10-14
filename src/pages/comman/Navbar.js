@@ -1,6 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useLayoutEffect } from "react";
+import { appendScript } from "../utils/appendScript";
+import { removeScript } from "../utils/removeScript";
+import { filter, soft_ui__ } from "./Constant";
 import $ from "jquery";
 function Navbar() {
+	useLayoutEffect(() => {
+		appendScript(filter);
+		// appendScript(soft_ui__);
+
+		return () => {
+			removeScript(filter);
+			// removeScript(soft_ui__);
+		};
+	}, []);
+
 	const [theme, setTheme] = useState("g-sidenav-show bg-gray-100 dark-version");
 	const [nav, setNav] = useState(false);
 	const darkMode = () => {
