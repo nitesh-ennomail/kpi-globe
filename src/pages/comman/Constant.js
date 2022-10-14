@@ -4,14 +4,16 @@ export const singup_driver = "/assets/js/signup-drivers.js";
 export const singup_conversion_driver =
 	"/assets/js/signup-conversion-driver.js";
 export const signup_engagement = "/assets/js/signup-drivers.js";
-export const signup_demographics = "/assets/js/signup-demographics.js";
 
+export const signup_demographics = "/assets/js/signup-demographics.js";
 export const signup_demographics_map = "https://cdn.amcharts.com/lib/5/map.js";
 export const signup_demographics_geodata =
 	"https://cdn.amcharts.com/lib/5/geodata/usaLow.js";
 export const signup_demographics_themes =
 	"https://cdn.amcharts.com/lib/5/themes/Responsive.js";
 export const signup_demographics_chartjs = "/assets/js/plugins/chartjs.min.js";
+
+export const signup_hcp_preformance = "/assets/js/signup-hcp-performance.js";
 
 // <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
 // 		<script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
@@ -32,3 +34,12 @@ export const d3_min_engage =
 export const soft_ui = "/assets/css/soft-ui-dashboard.css";
 export const soft_ui__ = "/assets/js/soft-ui-dashboard.min.js";
 export const filter = "/assets/js/filters.js";
+
+//Amchart
+export const amChartIndex = "https://cdn.amcharts.com/lib/5/index.js";
+export const amChartXy = "https://cdn.amcharts.com/lib/5/xy.js";
+export const amChartRadar = "https://cdn.amcharts.com/lib/5/radar.js";
+export const amChartAnimated =
+	"https://cdn.amcharts.com/lib/5/themes/Animated.js";
+export const amChartExporting =
+	"https://cdn.amcharts.com/lib/5/plugins/exporting.js";

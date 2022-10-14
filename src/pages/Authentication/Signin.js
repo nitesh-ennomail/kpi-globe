@@ -6,12 +6,12 @@ import { useNavigate } from "react-router-dom";
 import $ from "jquery";
 function Signin() {
 	const navitage = useNavigate();
-	useLayoutEffect(() => {
-		appendScript(signin);
-		return () => {
-			removeScript(signin);
-		};
-	}, []);
+	// useLayoutEffect(() => {
+	// 	appendScript(signin);
+	// 	return () => {
+	// 		removeScript(signin);
+	// 	};
+	// }, []);
 
 	const handleSubmit = (event) => {
 		// POST request using fetch inside useEffect React hook

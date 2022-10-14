@@ -1,15 +1,36 @@
 import React, { useLayoutEffect } from "react";
-import { home_overview, d3_min, soft_ui, soft_ui__ } from "../comman/Constant";
-import { appendScript } from "../utils/appendScript";
+import {
+	home_overview,
+	d3_min,
+	soft_ui,
+	soft_ui__,
+	amChartIndex,
+	amChartXy,
+	amChartRadar,
+	amChartAnimated,
+	amChartExporting,
+} from "../comman/Constant";
+import { appendScript, appendScriptHead } from "../utils/appendScript";
 import { removeScript } from "../utils/removeScript";
 
 function HomeOverview(props) {
 	useLayoutEffect(() => {
+		appendScriptHead(amChartIndex);
+		appendScriptHead(amChartXy);
+		appendScriptHead(amChartRadar);
+		appendScriptHead(amChartAnimated);
+		appendScriptHead(amChartExporting);
+
 		// appendScript(soft_ui__);
 		// appendScript(soft_ui);
 		appendScript(home_overview);
 		appendScript(d3_min);
 		return () => {
+			removeScript(amChartIndex);
+			removeScript(amChartXy);
+			removeScript(amChartRadar);
+			removeScript(amChartAnimated);
+			removeScript(amChartExporting);
 			// removeScript(soft_ui__);
 			// removeScript(soft_ui);
 			removeScript(home_overview);
