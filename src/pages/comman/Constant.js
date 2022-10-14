@@ -3,6 +3,7 @@ export const singup_overview = "/assets/js/signup-overview.js";
 export const singup_driver = "/assets/js/signup-drivers.js";
 export const singup_conversion_driver =
 	"/assets/js/signup-conversion-driver.js";
+export const signup_engagement = "/assets/js/signup-drivers.js";
 
 // home
 export const home_overview = "/assets/js/home-overview.js";

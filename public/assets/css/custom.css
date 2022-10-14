@@ -567,3 +567,32 @@
     transform: translate(-50%, -50%);
   }
 /* no chart access css*/
+
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  tr:nth-child(odd) span {
+    color: #000 !important;
+  }
+  .table {
+    border-collapse: none;
+  }
+  .searchActive {
+    border-bottom: 2px solid #eee;
+  }
+  button.dropdown-lg-responsive {
+    display: inline-block !important;
+    min-width: 10vw !important;
+    white-space: nowrap !important;
+    vertical-align: middle !important;
+}
+
+div#collapseExample.collapse.show {
+    transition-duration: 0.36;
+}
+
+#wordcloud {
+    width: 100%;
+    height: 800px;
+}
