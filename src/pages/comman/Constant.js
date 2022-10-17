@@ -29,6 +29,10 @@ export const d3_min =
 export const d3_min_engage =
 	"https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js";
 
+//Enrollment
+
+export const enrollment_overview = "/assets/js/enrollment-overview.js";
+
 // comman
 
 export const soft_ui = "/assets/css/soft-ui-dashboard.css";

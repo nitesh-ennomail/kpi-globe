@@ -1,42 +1,40 @@
-import React, { useLayoutEffect, useState } from "react";
-import FunnelChart from "../components/FunnelGraph";
-import TreeGraph from "../components/TreeGraph";
-import { AnimatedTree } from "react-tree-graph";
-import { d3_min, home_overview, filter } from "../comman/Constant";
-import { appendScript } from "../utils/appendScript";
+import React, { useLayoutEffect } from "react";
+import {
+	home_overview,
+	d3_min,
+	soft_ui,
+	soft_ui__,
+	amChartIndex,
+	amChartXy,
+	amChartRadar,
+	amChartAnimated,
+	amChartExporting,
+} from "../comman/Constant";
+import { appendScript, appendScriptHead } from "../utils/appendScript";
 import { removeScript } from "../utils/removeScript";
 
-var dataExample1 = {
-	displayPercent: true,
-	subLabelValue: "raw",
-	labels: [
-		"Sign Up",
-		"Enrollment",
-		"Fulfilment",
-		"Start Treatment",
-		"Keeping The Momentum",
-	],
-	subLabels: ["Patients"],
-	colors: [["#66e2c7", "#38d6ae", "#279c7f"]],
-	values: [[450], [320], [230], [150], [120]],
-};
-
 function HomeOverview(props) {
-	// const changeData = () => {
-	// 	setFunnelData(funnelData === dataExample1 ? dataExample2 : dataExample1);
-	// };
-	const [funnelData, setFunnelData] = useState(dataExample1);
-
 	useLayoutEffect(() => {
+		appendScriptHead(amChartIndex);
+		appendScriptHead(amChartXy);
+		appendScriptHead(amChartRadar);
+		appendScriptHead(amChartAnimated);
+		appendScriptHead(amChartExporting);
+
+		// appendScript(soft_ui__);
+		// appendScript(soft_ui);
 		appendScript(home_overview);
 		appendScript(d3_min);
-		appendScript(filter);
-
 		return () => {
+			removeScript(amChartIndex);
+			removeScript(amChartXy);
+			removeScript(amChartRadar);
+			removeScript(amChartAnimated);
+			removeScript(amChartExporting);
+			// removeScript(soft_ui__);
+			// removeScript(soft_ui);
 			removeScript(home_overview);
 			removeScript(d3_min);
-			removeScript(filter);
-			// root.dispose();
 		};
 	}, []);
 
@@ -45,7 +43,6 @@ function HomeOverview(props) {
 			<div className="container-fluid py-4">
 				<div className="row">
 					<div className="col-6">
-						{/* <button onClick={changeData}>change data</button> */}
 						<h4 className>North Star Metrics</h4>
 					</div>
 				</div>
@@ -281,7 +278,7 @@ function HomeOverview(props) {
 										</div>
 									</div>
 								</div>
-								{/* <FunnelChart data={funnelData} /> */}
+								{/* <FunnelChart /> */}
 								<div id="f1" className="funnel funnel-container mt-4 mb-6" />
 								<div id="f2" className="d-none" />
 							</div>
@@ -369,8 +366,6 @@ function HomeOverview(props) {
 								</div>
 							</div>
 							<div className="drop-container ms-5 mb-4">
-								{/* <TreeGraph /> */}
-								{/* <AnimatedTree data={treeData} height={400} width={400} /> */}
 								<div id="hcontainer" className="h-svg-container" />
 							</div>
 						</div>
