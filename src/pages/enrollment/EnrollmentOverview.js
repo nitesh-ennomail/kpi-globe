@@ -1,19 +1,32 @@
-import React, { useLayoutEffect } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
+import { d3_min, enrollment_overview } from "../comman/Constant";
+import FunnelChart from "../components/FunnelGraph";
 import { appendScript } from "../utils/appendScript";
 import { removeScript } from "../utils/removeScript";
 
-import { enrollment_overview, d3_min } from "../comman/Constant";
+// import { enrollment_overview, d3_min } from "../comman/Constant";
+import { funnelData } from "./data";
+import { funnelData1 } from "../home/data";
 
 function EnrollmentOverview(props) {
-	useLayoutEffect(() => {
-		appendScript(enrollment_overview);
-		// appendScript(d3_min);
+	const [signup_welcome, setSignup_welcome] = useState(19);
+	const [welcome_enrollment, setWelcome_enrollment] = useState(32);
+	// const [data, setFunnelData] = useState(funnelData);
+	useEffect(() => {
+		// setFunnelData(funnelData);
+		setSignup_welcome(60);
+		setWelcome_enrollment(90);
+	}, [funnelData]);
 
-		return () => {
-			removeScript(enrollment_overview);
-			// removeScript(d3_min);
-		};
-	}, []);
+	// useLayoutEffect(() => {
+	// 	appendScript(enrollment_overview);
+	// 	appendScript(d3_min);
+
+	// 	return () => {
+	// 		removeScript(enrollment_overview);
+	// 		removeScript(d3_min);
+	// 	};
+	// }, []);
 
 	return (
 		<React.Fragment>
@@ -100,10 +113,12 @@ function EnrollmentOverview(props) {
 										</div>
 									</div>
 								</div>
-								<div
+								<FunnelChart data={funnelData} />
+
+								{/* <div
 									className="funnel funnel-container m-4"
 									id="funnel_chart"
-								/>
+								/> */}
 								{/* <div id="f2" className="d-none" /> */}
 								<div className="method-buttons2 mt-4">
 									<button
@@ -142,9 +157,9 @@ function EnrollmentOverview(props) {
 										<div className="progress-info">
 											<div className="progress-percentage mb-2">
 												<span className="text-sm font-weight-bold">
-													<span id="signup_welcome_percent" />% of patients who
-													complete sign up forms didn't complete enrollment
-													calls
+													{/* <span id="signup_welcome_percent" /> */}
+													{signup_welcome}% of patients who complete sign up
+													forms didn't complete enrollment calls
 												</span>
 											</div>
 										</div>
@@ -153,9 +168,10 @@ function EnrollmentOverview(props) {
 												className="progress-bar-lg bg-gradient-danger"
 												role="progressbar"
 												id="signup_welcome_percent_progress"
-												aria-valuenow={60}
+												aria-valuenow={32}
 												aria-valuemin={0}
 												aria-valuemax={100}
+												style={{ width: `${signup_welcome}%` }}
 											/>
 										</div>
 									</div>
@@ -167,8 +183,9 @@ function EnrollmentOverview(props) {
 										<div className="progress-info">
 											<div className="progress-percentage mb-2">
 												<span className="text-sm font-weight-bold">
-													<span id="welcome_enrollment_percent" />% of patients
-													who complete enrollment calls didn't get enrolled
+													{/* <span id="welcome_enrollment_percent" /> */}
+													{welcome_enrollment}% of patients who complete
+													enrollment calls didn't get enrolled
 												</span>
 											</div>
 										</div>
@@ -180,7 +197,7 @@ function EnrollmentOverview(props) {
 												aria-valuenow={60}
 												aria-valuemin={0}
 												aria-valuemax={100}
-												style={{ width: "60%" }}
+												style={{ width: `${welcome_enrollment}%` }}
 											/>
 										</div>
 									</div>

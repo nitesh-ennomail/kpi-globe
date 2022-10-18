@@ -213,28 +213,61 @@ function Sidebar(props) {
 								aria-controls="applicationsExamples"
 								role="button"
 								aria-expanded="false">
-								<div className="icon icon-shape shadow border-radius-md text-center d-flex align-items-center justify-content-center me-2">
+								{/* <div className="icon icon-shape shadow border-radius-md text-center d-flex align-items-center justify-content-center me-2">
 									<i className="fa-solid fa-clipboard-user fa-fw opacity-10 text-2xl text-gradient text-primary d-flex align-items-center justify-content-center"></i>
+								</div> */}
+
+								<div
+									className={`${activeIcon} ${
+										nameUrl.path == "enrollment" ? "bg-gradient-primary" : ""
+									}`}>
+									<i
+										className={`${activeTab} ${
+											nameUrl.path == "enrollment"
+												? "fa-solid fa-clipboard-user fa-fw text-white"
+												: "fa-solid fa-clipboard-user fa-fw text-gradient text-primary"
+										}`}></i>
 								</div>
+
 								<span className="nav-link-text ms-1">Enrollment</span>
 							</a>
-							<div className="collapse" id="enrollmentPages">
+							<div
+								className={`collapse ${
+									nameUrl.path == "enrollment" ? "show" : ""
+								}`}
+								id="enrollmentPages">
 								<ul className="nav ms-4 ps-3">
 									<li className="nav-item">
 										<ul className="nav nav-sm flex-column">
 											<li className="nav-item">
-												<a
+												{/* <a
 													className="nav-link"
 													href="../../pages/enrollment/enrollment-overview.html">
 													<span className="sidenav-normal"> Overview </span>
-												</a>
+												</a> */}
+
+												<Link
+													className={`nav-link ${
+														activeUrl == "/enrollment/overview" ? "active" : ""
+													}`}
+													to="/enrollment/overview">
+													<span className="sidenav-normal"> Overview </span>
+												</Link>
 											</li>
 											<li className="nav-item">
-												<a
+												{/* <a
 													className="nav-link"
 													href="../../pages/enrollment/enrollment-drivers.html">
 													<span className="sidenav-normal"> Drivers </span>
-												</a>
+												</a> */}
+
+												<Link
+													className={`nav-link ${
+														activeUrl == "/enrollment/driver" ? "active" : ""
+													}`}
+													to="/enrollment/driver">
+													<span className="sidenav-normal"> Drivers </span>
+												</Link>
 											</li>
 											<li className="nav-item">
 												<a

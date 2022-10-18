@@ -5,27 +5,13 @@ import { AnimatedTree } from "react-tree-graph";
 import { d3_min, home_overview, filter } from "../comman/Constant";
 import { appendScript } from "../utils/appendScript";
 import { removeScript } from "../utils/removeScript";
-
-var dataExample1 = {
-	displayPercent: true,
-	subLabelValue: "raw",
-	labels: [
-		"Sign Up",
-		"Enrollment",
-		"Fulfilment",
-		"Start Treatment",
-		"Keeping The Momentum",
-	],
-	subLabels: ["Patients"],
-	colors: [["#66e2c7", "#38d6ae", "#279c7f"]],
-	values: [[450], [320], [230], [150], [120]],
-};
+import { funnelData } from "./data";
 
 function HomeOverview(props) {
 	// const changeData = () => {
 	// 	setFunnelData(funnelData === dataExample1 ? dataExample2 : dataExample1);
 	// };
-	const [funnelData, setFunnelData] = useState(dataExample1);
+	// const [funnelData, setFunnelData] = useState(dataExample1);
 
 	useLayoutEffect(() => {
 		appendScript(home_overview);
@@ -281,9 +267,9 @@ function HomeOverview(props) {
 										</div>
 									</div>
 								</div>
-								{/* <FunnelChart data={funnelData} /> */}
-								<div id="f1" className="funnel funnel-container mt-4 mb-6" />
-								<div id="f2" className="d-none" />
+								<FunnelChart data={funnelData} />
+								{/* <div id="f1" className="funnel funnel-container mt-4 mb-6" />
+								<div id="f2" className="d-none" /> */}
 							</div>
 						</div>
 					</div>

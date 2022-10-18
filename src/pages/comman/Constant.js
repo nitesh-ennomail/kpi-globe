@@ -31,7 +31,34 @@ export const d3_min_engage =
 
 //Enrollment
 
+export const amcharts5index = "https://cdn.amcharts.com/lib/5/index.js";
+export const amcharts5percent = "https://cdn.amcharts.com/lib/5/percent.js";
+export const amcharts5xy = "https://cdn.amcharts.com/lib/5/xy.js";
+export const amcharts5radar = "https://cdn.amcharts.com/lib/5/radar.js";
+export const amcharts5venn = "https://cdn.amcharts.com/lib/5/venn.js";
+export const amcharts5Animated =
+	"https://cdn.amcharts.com/lib/5/themes/Animated.js";
+export const amcharts5Responsive =
+	"https://cdn.amcharts.com/lib/5/themes/Responsive.js";
+export const assestsJcp = "/assets/js/jcp-venn.js";
+export const amcharts5Exporting =
+	"https://cdn.amcharts.com/lib/5/plugins/exporting.js";
+
+// <script src="/assets/js/core/popper.min.js"></script>
+// 	<script src="/assets/js/core/bootstrap.min.js"></script>
+// 	<script src="/assets/js/plugins/perfect-scrollbar.min.js"></script>
+// 	<script src="/assets/js/plugins/smooth-scrollbar.min.js"></script>
+// 	<script src="/assets/js/plugins/chartjs.min.js"></script>
+
+export const assetsPopper = "/assets/js/core/popper.min.js";
+export const assetsBootstrap = "/assets/js/core/bootstrap.min.js";
+export const assetsScrollbar = "/assets/js/plugins/perfect-scrollbar.min.js";
+export const assetsSmooth = "/assets/js/plugins/smooth-scrollbar.min.js";
+export const assetsChartjs = "/assets/js/plugins/chartjs.min.js";
+export const barChart = "/assets/js/barChart.js";
+
 export const enrollment_overview = "/assets/js/enrollment-overview.js";
+export const enrollment_driver = "/assets/js/enrollment-driver.js";
 
 // comman
 

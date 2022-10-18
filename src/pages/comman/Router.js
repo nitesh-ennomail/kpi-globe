@@ -12,6 +12,9 @@ import Signin from "../Authentication/Signin";
 import SignupEngagement from "../signup/SignupEngagement";
 import SignupDemographics from "../signup/SignupDemographics";
 import SignupHcpPerformance from "../signup/SignupHcpPerformance";
+import Enrollment from "../enrollment/Enrollment";
+import EnrollmentOverview from "../enrollment/EnrollmentOverview";
+import Enrollmentdriver from "../enrollment/EnrollmentDriver";
 function Router() {
 	return (
 		<BrowserRouter>
@@ -32,6 +35,15 @@ function Router() {
 					<Route path="engagement" element={<SignupEngagement />} />
 					<Route path="demographics" element={<SignupDemographics />} />
 					<Route path="hcp-performance" element={<SignupHcpPerformance />} />
+				</Route>
+
+				{/* Enrolment route */}
+				<Route path="enrollment" element={<Enrollment />}>
+					<Route path="overview" element={<EnrollmentOverview />} />
+					<Route path="driver" element={<Enrollmentdriver />} />
+					{/* <Route path="engagement" element={<EnrollmentEngagement />} />
+					<Route path="demographics" element={<EnrollmentDemographics />} />
+					<Route path="reasons" element={<EnrollmentReasons />} /> */}
 				</Route>
 
 				<Route
