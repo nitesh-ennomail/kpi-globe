@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useState } from "react";
 import FunnelChart from "../components/FunnelGraph";
-import TreeGraph from "../components/TreeGraph";
-import { AnimatedTree } from "react-tree-graph";
+// import TreeGraph from "../components/TreeGraph";
+// import { AnimatedTree } from "react-tree-graph";
 import { d3_min, home_overview, filter } from "../comman/Constant";
 import { appendScript } from "../utils/appendScript";
 import { removeScript } from "../utils/removeScript";

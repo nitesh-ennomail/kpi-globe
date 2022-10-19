@@ -21,13 +21,22 @@ import {
 	barChart,
 } from "../comman/Constant";
 import JcpVenn from "../components/JcpVenn";
-import MixedChart from "../components/MixedChart";
+import LineChart from "../components/LineChart";
 
-import { vennData, vennData1 } from "./data";
+import {
+	vennData,
+	vennData1,
+	lineChartData,
+	option1,
+	lineChartData2,
+	option2,
+} from "./data";
 
 function EnrollmentOverview(props) {
 	const [first, setfirst] = useState(vennData);
 	const [chartData1, setChartData1] = useState({});
+	const [testData, setTestData] = useState(lineChartData2);
+
 	useLayoutEffect(() => {
 		// appendScript(barChart);
 
@@ -352,7 +361,7 @@ function EnrollmentOverview(props) {
 										className="chart-canvas"
 										height={500}
 									/> */}
-									<MixedChart chartData={"chartData1"} />
+									{/* <MixedChart chartData={"chartData1"} /> */}
 									{/* <JcpVenn data={first} /> */}
 								</div>
 							</div>
@@ -435,10 +444,12 @@ function EnrollmentOverview(props) {
 							</div>
 							<div className="card-body p-3">
 								<div className="chart">
-									<canvas
+									<LineChart
 										id="chart-line"
+										// data={lineChartData}
+										data={testData}
+										options={option1}
 										className="chart-canvas"
-										height={500}
 									/>
 								</div>
 							</div>
@@ -515,11 +526,18 @@ function EnrollmentOverview(props) {
 							</div>
 							<div className="card-body p-3">
 								<div className="chart">
-									<canvas
+									{/* <canvas
 										id="chart-line-2"
 										className="chart-canvas"
 										height={500}
+									/> */}
+									<LineChart
+										id="chart-line-2"
+										data={lineChartData2}
+										options={option2}
+										className="chart-canvas"
 									/>
+									{/* <LineChart id="chart-line-2" /> */}
 								</div>
 							</div>
 						</div>

@@ -86,3 +86,254 @@ export let vennData1 = [
 		},
 	},
 ];
+
+export const lineChartData = {
+	labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+	datasets: [
+		{
+			label: "Warm Call Transfer",
+			tension: 0.4,
+			borderWidth: 0,
+			pointRadius: 0,
+			borderColor: "#f82c91",
+			borderWidth: 3,
+			// backgroundColor: gradientStroke3,
+			backgroundColor: `rgba(248, 44, 145, 0.3)`,
+
+			fill: true,
+			data: [55, 60, 200, 280, 300, 450, 380, 280, 527],
+			maxBarThickness: 6,
+		},
+		{
+			label: "Text",
+			tension: 0.4,
+			borderWidth: 0,
+			pointRadius: 0,
+			borderColor: "#38d6ae",
+			borderWidth: 3,
+			// backgroundColor: gradientStroke1,
+			backgroundColor: `rgba(56, 214, 174,0.3)`,
+
+			fill: true,
+			data: [50, 40, 300, 220, 500, 250, 400, 230, 505],
+			maxBarThickness: 6,
+		},
+		{
+			label: "Website",
+			tension: 0.4,
+			borderWidth: 0,
+			pointRadius: 0,
+			borderColor: "#611bff",
+			borderWidth: 3,
+			// backgroundColor: gradientStroke2,
+			backgroundColor: `rgba(97, 27, 255, 0.2)`,
+
+			fill: true,
+			data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
+			maxBarThickness: 6,
+		},
+	],
+};
+
+export const option1 = {
+	responsive: true,
+	maintainAspectRatio: false,
+	plugins: {
+		legend: {
+			display: true,
+			position: "bottom",
+			labels: {
+				color: "#b2b9bf",
+				font: {
+					size: 14,
+					family: "Nunito Sans",
+					style: "bold",
+					lineHeight: 2,
+				},
+			},
+		},
+	},
+	interaction: {
+		intersect: false,
+		mode: "index",
+	},
+	scales: {
+		y: {
+			grid: {
+				drawBorder: false,
+				display: true,
+				drawOnChartArea: true,
+				drawTicks: false,
+				borderDash: [5, 5],
+			},
+			ticks: {
+				display: true,
+				padding: 10,
+				min: 0,
+				max: 10, // Your absolute max value
+				callback: function (value) {
+					return ((value / 10) * 100).toFixed(0) + "%"; // convert it to percentage
+				},
+				color: "#b2b9bf",
+				font: {
+					size: 14,
+					family: "Nunito Sans",
+					style: "bold",
+					lineHeight: 2,
+				},
+			},
+			scaleLabel: {
+				display: true,
+				labelString: "Percentage",
+			},
+		},
+		x: {
+			grid: {
+				drawBorder: false,
+				display: false,
+				drawOnChartArea: false,
+				drawTicks: false,
+				borderDash: [5, 5],
+			},
+			ticks: {
+				display: true,
+				padding: 10,
+				suggestedMin: 0,
+				suggestedMax: 800,
+				beginAtZero: true,
+				color: "#b2b9bf",
+				font: {
+					size: 14,
+					family: "Nunito Sans",
+					style: "bold",
+					lineHeight: 2,
+				},
+			},
+		},
+	},
+};
+
+export const lineChartData2 = {
+	labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+	datasets: [
+		{
+			label: "1-833-WITHME",
+			tension: 0.4,
+			borderWidth: 0,
+			pointRadius: 0,
+			borderColor: "#f82c91",
+			borderWidth: 3,
+			backgroundColor: `rgba(248, 44, 145, 0.3)`,
+			fill: true,
+			data: [55, 60, 200, 280, 300, 450, 380, 280, 527],
+			maxBarThickness: 6,
+		},
+		{
+			label: "JCP",
+			tension: 0.4,
+			borderWidth: 0,
+			pointRadius: 0,
+			borderColor: "#38d6ae",
+			borderWidth: 3,
+			backgroundColor: `rgba(56, 214, 174,0.3)`,
+			fill: true,
+			data: [50, 40, 300, 220, 500, 250, 400, 230, 505],
+			maxBarThickness: 6,
+		},
+		{
+			label: "MicroSiteHCP",
+			tension: 0.4,
+			borderWidth: 0,
+			pointRadius: 0,
+			borderColor: "#611bff",
+			borderWidth: 3,
+			backgroundColor: `rgba(97, 27, 255, 0.2)`,
+			fill: true,
+			data: [30, 90, 40, 140, 290, 290, 340, 250, 400],
+			maxBarThickness: 6,
+		},
+		{
+			label: "MicroSitePat",
+			tension: 0.4,
+			borderWidth: 0,
+			pointRadius: 0,
+			borderColor: "#f94902",
+			borderWidth: 3,
+			backgroundColor: `rgba(249, 73, 2, 0.2)`,
+			fill: true,
+			data: [35, 70, 200, 100, 190, 390, 370, 240, 450],
+			maxBarThickness: 6,
+		},
+	],
+};
+export const option2 = {
+	responsive: true,
+	maintainAspectRatio: false,
+	plugins: {
+		legend: {
+			display: true,
+			position: "bottom",
+			labels: {
+				color: "#b2b9bf",
+				font: {
+					size: 14,
+					family: "Nunito Sans",
+					style: "bold",
+					lineHeight: 2,
+				},
+			},
+		},
+	},
+	interaction: {
+		intersect: false,
+		mode: "index",
+	},
+	scales: {
+		y: {
+			grid: {
+				drawBorder: false,
+				display: true,
+				drawOnChartArea: true,
+				drawTicks: false,
+				borderDash: [5, 5],
+			},
+			ticks: {
+				display: true,
+				padding: 10,
+				suggestedMin: 0,
+				suggestedMax: 800,
+				beginAtZero: true,
+				color: "#b2b9bf",
+				font: {
+					size: 14,
+					family: "Nunito Sans",
+					style: "bold",
+					lineHeight: 2,
+				},
+			},
+		},
+		x: {
+			grid: {
+				drawBorder: false,
+				display: false,
+				drawOnChartArea: false,
+				drawTicks: false,
+				borderDash: [5, 5],
+			},
+			ticks: {
+				display: true,
+				padding: 10,
+				suggestedMin: 0,
+				suggestedMax: 800,
+				beginAtZero: true,
+				color: "#b2b9bf",
+				font: {
+					size: 14,
+					family: "Nunito Sans",
+					style: "bold",
+					lineHeight: 2,
+				},
+			},
+		},
+	},
+};
