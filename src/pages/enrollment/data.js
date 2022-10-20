@@ -138,20 +138,38 @@ export const lineChartData = {
 export const option1 = {
 	responsive: true,
 	maintainAspectRatio: false,
-	plugins: {
-		legend: {
-			display: true,
-			position: "bottom",
-			labels: {
-				color: "#b2b9bf",
-				font: {
-					size: 14,
-					family: "Nunito Sans",
-					style: "bold",
-					lineHeight: 2,
-				},
+	title: {
+		display: false,
+		text: "Chart.js line Chart - Multi Axis",
+	},
+
+	legend: {
+		display: true,
+		position: "bottom",
+		labels: {
+			color: "#b2b9bf",
+			font: {
+				size: 14,
+				family: "Nunito Sans",
+				style: "bold",
+				lineHeight: 2,
 			},
 		},
+	},
+	plugins: {
+		// legend: {
+		// 	display: true,
+		// 	position: "bottom",
+		// 	labels: {
+		// 		color: "#b2b9bf",
+		// 		font: {
+		// 			size: 14,
+		// 			family: "Nunito Sans",
+		// 			style: "bold",
+		// 			lineHeight: 2,
+		// 		},
+		// 	},
+		// },
 	},
 	interaction: {
 		intersect: false,
@@ -269,20 +287,34 @@ export const lineChartData2 = {
 export const option2 = {
 	responsive: true,
 	maintainAspectRatio: false,
-	plugins: {
-		legend: {
-			display: true,
-			position: "bottom",
-			labels: {
-				color: "#b2b9bf",
-				font: {
-					size: 14,
-					family: "Nunito Sans",
-					style: "bold",
-					lineHeight: 2,
-				},
+
+	legend: {
+		display: true,
+		position: "bottom",
+		labels: {
+			color: "#b2b9bf",
+			font: {
+				size: 14,
+				family: "Nunito Sans",
+				style: "bold",
+				lineHeight: 2,
 			},
 		},
+	},
+	plugins: {
+		// legend: {
+		// 	display: true,
+		// 	position: "bottom",
+		// 	labels: {
+		// 		color: "#b2b9bf",
+		// 		font: {
+		// 			size: 14,
+		// 			family: "Nunito Sans",
+		// 			style: "bold",
+		// 			lineHeight: 2,
+		// 		},
+		// 	},
+		// },
 	},
 	interaction: {
 		intersect: false,
@@ -336,4 +368,62 @@ export const option2 = {
 			},
 		},
 	},
+};
+
+export const mixChartData = {
+	labels: ["SP1", "SP2", "SP3", "SP4", "SP5", "SP6", "SP7", "SP8"],
+	datasets: [
+		{
+			type: "bar",
+			label: "Partners",
+			weight: 5,
+			tension: 0.5,
+			borderWidth: 0,
+			pointBackgroundColor: "#fa9cca",
+			borderColor: "#fa9cca",
+			backgroundColor: "#fa9cca",
+			borderRadius: 4,
+			borderSkipped: false,
+			data: [50, 45, 300, 220, 500, 250, 400, 230],
+			maxBarThickness: 10,
+			order: 2,
+		},
+		{
+			type: "line",
+			label: "Partners",
+			tension: 0.5,
+			borderWidth: 0,
+			pointRadius: 0,
+			pointBackgroundColor: "#fa9cca",
+			borderColor: "#fa9cca",
+			borderWidth: 3,
+			backgroundColor: `rgba(248, 44, 145, 0.3)`,
+			data: [50, 40, 300, 220, 500, 250, 400, 230],
+			fill: true,
+			order: 1,
+		},
+	],
+};
+
+export const mixChartData1 = {
+	labels: ["January", "February", "March", "April"],
+	datasets: [
+		{
+			type: "bar",
+			label: "Bar Dataset",
+			data: [50, 10, 30, 50],
+			borderColor: "rgb(255, 99, 132)",
+			backgroundColor: "rgba(255, 99, 132, 0.2)",
+			order: 2,
+		},
+		{
+			type: "line",
+			label: "Line Dataset",
+			data: [50, 10, 30, 50],
+			backgroundColor: "rgba(255, 99, 132, 0.2)",
+			fill: true,
+			borderColor: "rgb(54, 162, 235)",
+			order: 1,
+		},
+	],
 };

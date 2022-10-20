@@ -1,28 +1,28 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { appendScript, appendScriptHead } from "../utils/appendScript";
 import { removeScript } from "../utils/removeScript";
-import {
-	enrollment_driver,
-	amcharts5index,
-	amcharts5percent,
-	amcharts5xy,
-	amcharts5radar,
-	amcharts5venn,
-	amcharts5Animated,
-	amcharts5Responsive,
-	assestsJcp,
-	amcharts5Exporting,
-	filter,
-	assetsPopper,
-	assetsBootstrap,
-	assetsScrollbar,
-	assetsSmooth,
-	assetsChartjs,
-	barChart,
-} from "../comman/Constant";
+// import {
+// 	enrollment_driver,
+// 	amcharts5index,
+// 	amcharts5percent,
+// 	amcharts5xy,
+// 	amcharts5radar,
+// 	amcharts5venn,
+// 	amcharts5Animated,
+// 	amcharts5Responsive,
+// 	assestsJcp,
+// 	amcharts5Exporting,
+// 	filter,
+// 	assetsPopper,
+// 	assetsBootstrap,
+// 	assetsScrollbar,
+// 	assetsSmooth,
+// 	assetsChartjs,
+// 	barChart,
+// } from "../comman/Constant";
 import JcpVenn from "../components/JcpVenn";
 import LineChart from "../components/LineChart";
-
+import M_Chart from "../components/M_Chart";
 import {
 	vennData,
 	vennData1,
@@ -30,80 +30,47 @@ import {
 	option1,
 	lineChartData2,
 	option2,
+	mixChartData,
+	mixChartData1,
 } from "./data";
 
 function EnrollmentOverview(props) {
 	const [first, setfirst] = useState(vennData);
 	const [chartData1, setChartData1] = useState({});
-	const [testData, setTestData] = useState(lineChartData2);
+	const [testData, setTestData] = useState(lineChartData);
+	const [mixData, setMixData] = useState(mixChartData);
 
-	useLayoutEffect(() => {
-		// appendScript(barChart);
-
-		// 	// appendScript(filter);
-
-		// 	// appendScript(assetsPopper);
-		// 	// appendScript(assetsBootstrap);
-		// 	// appendScript(assetsScrollbar);
-		// 	// appendScript(assetsSmooth);
-		// 	// appendScript(assetsChartjs);
-
-		// 	// appendScriptHead(amcharts5index);
-		// 	// appendScriptHead(amcharts5percent);
-		// 	// appendScriptHead(amcharts5xy);
-		// 	// appendScriptHead(amcharts5radar);
-		// 	// appendScriptHead(amcharts5venn);
-		// 	// appendScriptHead(amcharts5Animated);
-		// 	// appendScriptHead(amcharts5Responsive);
-		// 	// appendScriptHead(assestsJcp);
-		// 	// appendScriptHead(amcharts5Exporting);
-
-		// 	// appendScript(enrollment_driver);
-
-		return () => {
-			// removeScript(barChart);
-			// 		// removeScript(enrollment_driver);
-			// 		// removeScript(amcharts5index);
-			// 		// removeScript(amcharts5percent);
-			// 		// removeScript(amcharts5xy);
-			// 		// removeScript(amcharts5radar);
-			// 		// removeScript(amcharts5venn);
-			// 		// removeScript(amcharts5Animated);
-			// 		// removeScript(amcharts5Responsive);
-			// 		// removeScript(assestsJcp);
-		};
-	}, []);
-
-	useEffect(() => {
-		const fetchPrices = async () => {
-			const res = await fetch("https://api.coincap.io/v2/assets/?limit=5");
-			const data = await res.json();
-			console.log("data", data);
-			setChartData1({
-				labels: data.data.map((crypto) => crypto.name),
-				datasets: [
-					{
-						label: "Price in USD",
-						data: data.data.map((crypto) => crypto.priceUsd),
-						backgroundColor: [
-							"#ffbb11",
-							"#ecf0f1",
-							"#50AF95",
-							"#f3ba2f",
-							"#2a71d0",
-						],
-					},
-				],
-			});
-		};
-		fetchPrices();
-	}, []);
+	// useEffect(() => {
+	// 	const fetchPrices = async () => {
+	// 		const res = await fetch("https://api.coincap.io/v2/assets/?limit=5");
+	// 		const data = await res.json();
+	// 		console.log("data", data);
+	// 		setChartData1({
+	// 			labels: data.data.map((crypto) => crypto.name),
+	// 			datasets: [
+	// 				{
+	// 					label: "Price in USD",
+	// 					data: data.data.map((crypto) => crypto.priceUsd),
+	// 					backgroundColor: [
+	// 						"#ffbb11",
+	// 						"#ecf0f1",
+	// 						"#50AF95",
+	// 						"#f3ba2f",
+	// 						"#2a71d0",
+	// 					],
+	// 				},
+	// 			],
+	// 		});
+	// 	};
+	// 	fetchPrices();
+	// }, []);
 
 	console.log("chartData1", chartData1);
 
 	return (
 		<React.Fragment>
 			<div className="container-fluid py-4">
+				{/* <button onClick={() => setMixData(mixChartData1)}>click</button> */}
 				<div className="row">
 					<div className="col-8 position-relative z-index-2">
 						<div className="card card-plain mb-4">
@@ -355,14 +322,18 @@ function EnrollmentOverview(props) {
 							</div>
 							<div className="card-body p-3">
 								<div className="chart">
-									{/* <h1>sdasd</h1> */}
 									{/* <canvas
 										id="mixed-chart"
 										className="chart-canvas"
 										height={500}
 									/> */}
-									{/* <MixedChart chartData={"chartData1"} /> */}
-									{/* <JcpVenn data={first} /> */}
+									<M_Chart
+										id="mixed-chart"
+										data={mixData}
+										// data={testData}
+										// options={option1}
+										// className="chart-canvas"
+									/>
 								</div>
 							</div>
 						</div>
@@ -449,7 +420,7 @@ function EnrollmentOverview(props) {
 										// data={lineChartData}
 										data={testData}
 										options={option1}
-										className="chart-canvas"
+										// className="chart-canvas"
 									/>
 								</div>
 							</div>
@@ -535,9 +506,7 @@ function EnrollmentOverview(props) {
 										id="chart-line-2"
 										data={lineChartData2}
 										options={option2}
-										className="chart-canvas"
 									/>
-									{/* <LineChart id="chart-line-2" /> */}
 								</div>
 							</div>
 						</div>
