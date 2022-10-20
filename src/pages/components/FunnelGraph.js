@@ -1,19 +1,37 @@
 import React, { useEffect, useState } from "react";
 import FunnelGraph from "funnel-graph-js";
 
-const FunnelGraphChart = ({ data }) => {
+const FunnelGraphChart = ({
+	id,
+	data,
+	direction = "vertical",
+	displayPercent = false,
+}) => {
 	// const [funnelData, setFunnelData] = useState(data);
-
+	console.log("displayPercent", displayPercent);
 	useEffect(() => {
 		let graph = new FunnelGraph({
-			container: "#funnel",
-			gradientDirection: "horizontal",
+			container: `#${id}`,
+			gradientDirection: `${direction}`,
+			// gradientDirection: "vertical",
 			data: data,
-			displayPercent: true,
-			direction: "horizontal",
+			displayPercent: displayPercent,
+			direction: `${direction}`,
+			// direction: "vertical",
+
 			// subLabelValue: "raw",
 		});
 		graph.draw();
+
+		// const funnelGraphc = new FunnelGraph({
+		// 	container: "#funnel",
+		// 	gradientDirection: "vertical",
+		// 	data: data,
+		// 	displayPercent: true,
+		// 	direction: "vertical",
+		// });
+		// funnelGraphc.draw();
+
 		// graph.updateData(data);
 		// graph.update(data);
 		// let graph = new FunnelGraph({
@@ -39,7 +57,7 @@ const FunnelGraphChart = ({ data }) => {
 	return (
 		<>
 			{/* <button onClick={changeData}>change</button> */}
-			<div className="funnel funnel-container" id="funnel" />
+			<div className="funnel funnel-container" id={id} />
 		</>
 	);
 };

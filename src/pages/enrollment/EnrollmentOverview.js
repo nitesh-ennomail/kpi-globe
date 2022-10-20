@@ -113,13 +113,12 @@ function EnrollmentOverview(props) {
 										</div>
 									</div>
 								</div>
-								<FunnelChart data={funnelData} />
-
-								{/* <div
-									className="funnel funnel-container m-4"
-									id="funnel_chart"
-								/> */}
-								{/* <div id="f2" className="d-none" /> */}
+								<FunnelChart
+									id="funnel1"
+									displayPercent={true}
+									direction="horizontal"
+									data={funnelData}
+								/>
 								<div className="method-buttons2 mt-4">
 									<button
 										className="bg-gradient-primary text-doyle"

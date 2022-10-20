@@ -26,18 +26,18 @@ import M_Chart from "../components/M_Chart";
 import {
 	vennData,
 	vennData1,
-	lineChartData,
-	option1,
-	lineChartData2,
-	option2,
 	mixChartData,
 	mixChartData1,
+	configEnrollLineChart,
+	configChartLine,
+	configChartLine2,
+	guideChartData,
 } from "./data";
 
 function EnrollmentOverview(props) {
 	const [first, setfirst] = useState(vennData);
 	const [chartData1, setChartData1] = useState({});
-	const [testData, setTestData] = useState(lineChartData);
+	const [testData, setTestData] = useState(configChartLine);
 	const [mixData, setMixData] = useState(mixChartData);
 
 	// useEffect(() => {
@@ -192,7 +192,9 @@ function EnrollmentOverview(props) {
 											Source: JCP and Form Assembly">
 										<i className="fas fa-info" aria-hidden="true" />
 									</button>
-									<div id="exportdiv"></div>
+									<div className="ms-auto">
+										<div id="exportdiv"></div>
+									</div>
 
 									{/* <div className="ms-auto">
 										<div className="dropdown pe-2">
@@ -246,7 +248,7 @@ function EnrollmentOverview(props) {
 									</div> */}
 								</div>
 							</div>
-							<JcpVenn data={first} />
+							<JcpVenn data={vennData} />
 							{/* <div id="jcpvenn" />
 							<div className="chartdiv-legend" id="chartdiv-legend" /> */}
 						</div>
@@ -328,8 +330,9 @@ function EnrollmentOverview(props) {
 										height={500}
 									/> */}
 									<M_Chart
-										id="mixed-chart"
-										data={mixData}
+										id="mixed-chart1"
+										// data={mixChartData}
+										config={mixChartData}
 										// data={testData}
 										// options={option1}
 										// className="chart-canvas"
@@ -415,13 +418,7 @@ function EnrollmentOverview(props) {
 							</div>
 							<div className="card-body p-3">
 								<div className="chart">
-									<LineChart
-										id="chart-line"
-										// data={lineChartData}
-										data={testData}
-										options={option1}
-										// className="chart-canvas"
-									/>
+									<LineChart id="chart-line" config={configChartLine} />
 								</div>
 							</div>
 						</div>
@@ -502,11 +499,7 @@ function EnrollmentOverview(props) {
 										className="chart-canvas"
 										height={500}
 									/> */}
-									<LineChart
-										id="chart-line-2"
-										data={lineChartData2}
-										options={option2}
-									/>
+									<LineChart id="chart-line-2" config={configChartLine2} />
 								</div>
 							</div>
 						</div>

@@ -601,10 +601,17 @@ div#collapseExample.collapse.show {
 a.am5exporting-icon,
 .am5exporting-list {
   background: #C2FFE2;
+  /* border: 1px solid green; */
+
 }
 
 a.am5exporting-icon:hover,
 .am5exporting-menu-open a.am5exporting-icon,
 .am5exporting-item a:hover {
   background: #85FFC4;
+  /* border: 1px solid red */
+}
+
+.am5exporting-menu.am5exporting-valign-top, .am5exporting-icon.am5exporting-valign-top, .am5exporting-list.am5exporting-align-top {
+    top: 10px !important;
 }

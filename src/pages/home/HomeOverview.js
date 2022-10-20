@@ -267,7 +267,11 @@ function HomeOverview(props) {
 										</div>
 									</div>
 								</div>
-								<FunnelChart data={funnelData} />
+								<FunnelChart
+									id="funnel"
+									direction="horizontal"
+									data={funnelData}
+								/>
 								{/* <div id="f1" className="funnel funnel-container mt-4 mb-6" />
 								<div id="f2" className="d-none" /> */}
 							</div>

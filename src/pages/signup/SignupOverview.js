@@ -3,6 +3,8 @@ import { appendScript } from "../utils/appendScript";
 import { removeScript } from "../utils/removeScript";
 
 import { singup_overview, d3_min } from "../comman/Constant";
+import { funnelData } from "./data.js";
+import FunnelGraph from "../components/FunnelGraph";
 
 function SignupOverview(props) {
 	useLayoutEffect(() => {
@@ -101,8 +103,14 @@ function SignupOverview(props) {
 										</div>
 									</div>
 								</div>
-								<div id="f1" className="funnel funnel-container m-3"></div>
-								<div id="f2" className="d-none"></div>
+
+								<FunnelGraph
+									id="funnel"
+									direction="horizontal"
+									data={funnelData}
+								/>
+								{/* <div id="f1" className="funnel funnel-container m-3"></div>
+								<div id="f2" className="d-none"></div> */}
 							</div>
 						</div>
 					</div>
