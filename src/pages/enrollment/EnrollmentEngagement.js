@@ -41,7 +41,7 @@ function EnrollmentEngagement(props) {
 
 	useEffect(() => {
 		const fetchEnrollData = async () => {
-			alert("called");
+			// alert("called");
 			// var ctx = document.getElementById("line-chart");
 
 			// var gradientStroke1 = ctx.createLinearGradient(56, 214, 174, 50);
@@ -87,7 +87,11 @@ function EnrollmentEngagement(props) {
 							pointRadius: 0,
 							borderColor: "#f82c91",
 							borderWidth: 3,
-							backgroundColor: `rgba(248, 44, 145, 0.2)`,
+							backgroundColor: [
+								"rgba(248, 44, 145, 0.3)",
+								"rgba(248, 44, 145, 0.2)",
+								"rgba(248, 44, 145, 0.1)",
+							],
 							fill: true,
 							data: data.preferences.Phone,
 							maxBarThickness: 6,
@@ -100,7 +104,11 @@ function EnrollmentEngagement(props) {
 							borderColor: "#38d6ae",
 							borderWidth: 3,
 							// backgroundColor: gradientStroke1,
-							backgroundColor: `rgba(56, 214, 174, 0.2)`,
+							backgroundColor: [
+								"rgba(56, 214, 174,0.3)",
+								"rgba(56, 214, 174, 0.2)",
+								"rgba(56, 214, 174, 0.1)",
+							],
 							fill: true,
 							data: data.preferences.Email,
 							maxBarThickness: 6,
@@ -113,7 +121,12 @@ function EnrollmentEngagement(props) {
 							borderColor: "#611bff",
 							borderWidth: 3,
 							// backgroundColor: gradientStroke2,
-							backgroundColor: "rgba(97, 27, 255, 0.1)",
+							backgroundColor: [
+								// "rgba(56, 214, 174, 50)",
+								"rgba(97, 27, 255, 0.2)",
+								"rgba(97, 27, 255, 0.1)",
+								"rgba(97, 27, 255, 0.05)",
+							],
 							fill: true,
 							data: data.preferences.Text,
 							maxBarThickness: 6,
@@ -123,72 +136,120 @@ function EnrollmentEngagement(props) {
 				options: {
 					responsive: true,
 					maintainAspectRatio: false,
-					legend: {
-						display: true,
-						position: "bottom",
+					title: {
+						display: false,
+						text: "Chart.js line Chart - Multi Axis",
 					},
-					plugins: {
-						legend: {
-							color: "#b2b9bf",
-							font: {
-								size: 14,
-								family: "Nunito Sans",
-								style: "bold",
-								lineHeight: 2,
-							},
-						},
-					},
-					interaction: {
+					tooltips: {
 						intersect: false,
 						mode: "index",
 					},
+					legend: {
+						display: true,
+						position: "bottom",
+						labels: {
+							fontSize: 14,
+							fontColor: "#b2b9bf",
+							fontFamily: "Nunito Sans",
+							fontStyle: "bold",
+							lineHeight: 2,
+						},
+					},
+					// scales: {
+					// 	yAxes: [
+					// 		{
+					// 			gridLines: {
+					// 				drawBorder: false,
+					// 				display: true,
+					// 				drawOnChartArea: true,
+					// 				drawTicks: false,
+					// 				borderDash: [5, 5],
+					// 			},
+					// 			ticks: {
+					// 				display: true,
+					// 				padding: 10,
+					// 				suggestedMin: 0,
+					// 				suggestedMax: 800,
+					// 				beginAtZero: true,
+					// 				fontSize: 14,
+					// 				fontColor: "#b2b9bf",
+					// 				fontFamily: "Nunito Sans",
+					// 				fontStyle: "bold",
+					// 				lineHeight: 2,
+					// 			},
+					// 		},
+					// 	],
+					// 	xAxes: [
+					// 		{
+					// 			gridLines: {
+					// 				drawBorder: false,
+					// 				display: false,
+					// 				drawOnChartArea: false,
+					// 				drawTicks: false,
+					// 				borderDash: [5, 5],
+					// 			},
+					// 			ticks: {
+					// 				display: true,
+					// 				padding: 10,
+					// 				suggestedMin: 0,
+					// 				suggestedMax: 800,
+					// 				beginAtZero: true,
+					// 				fontSize: 14,
+					// 				fontColor: "#b2b9bf",
+					// 				fontFamily: "Nunito Sans",
+					// 				fontStyle: "bold",
+					// 				lineHeight: 2,
+					// 			},
+					// 		},
+					// 	],
+					// },
 					scales: {
-						y: {
-							grid: {
-								drawBorder: false,
-								display: true,
-								drawOnChartArea: true,
-								drawTicks: false,
-								borderDash: [5, 5],
-							},
-							ticks: {
-								display: true,
-								padding: 10,
-								suggestedMin: 0,
-								suggestedMax: 800,
-								beginAtZero: true,
-								color: "#b2b9bf",
-								font: {
-									size: 14,
-									family: "Nunito Sans",
-									style: "bold",
+						// yAxes: [
+						// 	{
+						// 		gridLines: {
+						// 			drawBorder: false,
+						// 			display: false,
+						// 			drawOnChartArea: true,
+						// 			drawTicks: false,
+						// 			borderDash: [5, 5],
+						// 		},
+						// 		ticks: {
+						// 			display: true,
+						// 			padding: 10,
+						// 			suggestedMin: 0,
+						// 			suggestedMax: 600,
+						// 			beginAtZero: true,
+						// 			fontSize: 14,
+						// 			fontColor: "#b2b9bf",
+						// 			fontFamily: "Nunito Sans",
+						// 			fontStyle: "bold",
+						// 			lineHeight: 2,
+						// 		},
+						// 	},
+						// ],
+						xAxes: [
+							{
+								gridLines: {
+									drawBorder: false,
+									display: false,
+									drawOnChartArea: false,
+									drawTicks: false,
+									borderDash: [5, 5],
+								},
+								ticks: {
+									display: true,
+									padding: 10,
+									suggestedMin: 0,
+									suggestedMax: 600,
+									beginAtZero: true,
+									fontColor: "#b2b9bf",
+									fontSize: 14,
+									fontFamily: "Nunito Sans",
+									fontStyle: "bold",
 									lineHeight: 2,
 								},
 							},
-						},
-						x: {
-							grid: {
-								drawBorder: false,
-								display: false,
-								drawOnChartArea: false,
-								drawTicks: false,
-								borderDash: [5, 5],
-							},
-							ticks: {
-								display: true,
-								padding: 10,
-								suggestedMin: 0,
-								suggestedMax: 800,
-								beginAtZero: true,
-								color: "#b2b9bf",
-								font: {
-									size: 14,
-									family: "Nunito Sans",
-									style: "bold",
-									lineHeight: 2,
-								},
-							},
-						},
+						],
 					},
 				},
 			});

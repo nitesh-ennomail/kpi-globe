@@ -1,29 +1,123 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import FunnelChart from "../components/FunnelGraph";
-// import TreeGraph from "../components/TreeGraph";
-// import { AnimatedTree } from "react-tree-graph";
-import { d3_min, home_overview, filter } from "../comman/Constant";
-import { appendScript } from "../utils/appendScript";
-import { removeScript } from "../utils/removeScript";
 import { funnelData } from "./data";
+import LineChart from "../components/LineChart";
 
 function HomeOverview(props) {
-	// const changeData = () => {
-	// 	setFunnelData(funnelData === dataExample1 ? dataExample2 : dataExample1);
-	// };
-	// const [funnelData, setFunnelData] = useState(dataExample1);
+	const [lineChartData, setLineChartData] = useState(null);
 
-	useLayoutEffect(() => {
-		appendScript(home_overview);
-		appendScript(d3_min);
-		appendScript(filter);
-
-		return () => {
-			removeScript(home_overview);
-			removeScript(d3_min);
-			removeScript(filter);
-			// root.dispose();
-		};
+	useEffect(() => {
+		setLineChartData({
+			type: "line",
+			data: {
+				labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+				datasets: [
+					{
+						label: "Patients Assisted",
+						tension: 0.4,
+						borderWidth: 0,
+						pointRadius: 0,
+						borderColor: "#38d6ae",
+						borderWidth: 3,
+						backgroundColor: [
+							"rgba(56, 214, 174,0.3)",
+							"rgba(56, 214, 174, 0.2)",
+							"rgba(56, 214, 174, 0.1)",
+						],
+						fill: true,
+						data: [50, 40, 300, 220, 500, 250, 400, 230, 505],
+						maxBarThickness: 6,
+					},
+					{
+						label: "Patients Referred",
+						tension: 0.4,
+						borderWidth: 0,
+						pointRadius: 0,
+						borderColor: "#e9ecef",
+						borderWidth: 3,
+						backgroundColor: [
+							"rgba(233, 236, 239, 0.3)",
+							"rgba(233, 236, 239, 0.2)",
+							"rgba(233, 236, 239, 0.1)",
+						],
+						fill: true,
+						data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
+						maxBarThickness: 6,
+					},
+				],
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				tooltips: {
+					intersect: false,
+					mode: "index",
+				},
+				title: {
+					display: false,
+					text: "Chart.js Line Chart",
+				},
+				legend: {
+					display: true,
+					position: "bottom",
+					labels: {
+						fontSize: 14,
+						fontColor: "#b2b9bf",
+						fontFamily: "Nunito Sans",
+						fontStyle: "bold",
+						lineHeight: 2,
+					},
+				},
+				scales: {
+					yAxes: [
+						{
+							gridLines: {
+								drawBorder: false,
+								display: true,
+								drawOnChartArea: true,
+								drawTicks: false,
+								borderDash: [5, 5],
+							},
+							ticks: {
+								display: true,
+								padding: 10,
+								suggestedMin: 0,
+								suggestedMax: 500,
+								beginAtZero: true,
+								fontColor: "#b2b9bf",
+								fontSize: 14,
+								fontFamily: "Nunito Sans",
+								fontStyle: "bold",
+								lineHeight: 2,
+							},
+						},
+					],
+					xAxes: [
+						{
+							gridLines: {
+								drawBorder: false,
+								display: false,
+								drawOnChartArea: false,
+								drawTicks: false,
+								borderDash: [5, 5],
+							},
+							ticks: {
+								display: true,
+								padding: 10,
+								suggestedMin: 0,
+								suggestedMax: 500,
+								beginAtZero: true,
+								fontColor: "#b2b9bf",
+								fontSize: 14,
+								fontFamily: "Nunito Sans",
+								fontStyle: "bold",
+								lineHeight: 2,
+							},
+						},
+					],
+				},
+			},
+		});
 	}, []);
 
 	return (
@@ -31,7 +125,6 @@ function HomeOverview(props) {
 			<div className="container-fluid py-4">
 				<div className="row">
 					<div className="col-6">
-						{/* <button onClick={changeData}>change data</button> */}
 						<h4 className>North Star Metrics</h4>
 					</div>
 				</div>
@@ -508,11 +601,19 @@ function HomeOverview(props) {
 							</div>
 							<div className="card-body p-3">
 								<div className="chart min-height-300">
-									<canvas
+									{/* <canvas
 										id="chart-line"
 										className="chart-canvas"
 										height={500}
-									/>
+									/> */}
+									{lineChartData && (
+										<LineChart
+											id="line-chart"
+											// config={LineChartData}
+											config={lineChartData}
+											height="500"
+										/>
+									)}
 								</div>
 							</div>
 						</div>

@@ -121,7 +121,11 @@ export const configChartLine = {
 				borderColor: "#f82c91",
 				borderWidth: 3,
 				// backgroundColor: gradientStroke3,
-				backgroundColor: `rgba(248, 44, 145, 0.3)`,
+				backgroundColor: [
+					"rgba(248, 44, 145, 0.3)",
+					"rgba(248, 44, 145, 0.2)",
+					"rgba(248, 44, 145, 0.1)",
+				],
 
 				fill: true,
 				data: [55, 60, 200, 280, 300, 450, 380, 280, 527],
@@ -135,7 +139,11 @@ export const configChartLine = {
 				borderColor: "#38d6ae",
 				borderWidth: 3,
 				// backgroundColor: gradientStroke1,
-				backgroundColor: `rgba(56, 214, 174,0.3)`,
+				backgroundColor: [
+					"rgba(56, 214, 174,0.3)",
+					"rgba(56, 214, 174, 0.2)",
+					"rgba(56, 214, 174, 0.1)",
+				],
 
 				fill: true,
 				data: [50, 40, 300, 220, 500, 250, 400, 230, 505],
@@ -149,7 +157,11 @@ export const configChartLine = {
 				borderColor: "#611bff",
 				borderWidth: 3,
 				// backgroundColor: gradientStroke2,
-				backgroundColor: `rgba(97, 27, 255, 0.2)`,
+				backgroundColor: [
+					"rgba(97, 27, 255, 0.2)",
+					"rgba(97, 27, 255, 0.1)",
+					"rgba(97, 27, 255, 0.05)",
+				],
 
 				fill: true,
 				data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
@@ -164,92 +176,77 @@ export const configChartLine = {
 			display: false,
 			text: "Chart.js line Chart - Multi Axis",
 		},
+		tooltips: {
+			intersect: false,
+			mode: "index",
+		},
 
 		legend: {
 			display: true,
 			position: "bottom",
 			labels: {
-				color: "#b2b9bf",
-				font: {
-					size: 14,
-					family: "Nunito Sans",
-					style: "bold",
-					lineHeight: 2,
-				},
+				fontSize: 14,
+				fontColor: "#b2b9bf",
+				fontFamily: "Nunito Sans",
+				fontStyle: "bold",
+				lineHeight: 2,
 			},
-		},
-		plugins: {
-			// legend: {
-			// 	display: true,
-			// 	position: "bottom",
-			// 	labels: {
-			// 		color: "#b2b9bf",
-			// 		font: {
-			// 			size: 14,
-			// 			family: "Nunito Sans",
-			// 			style: "bold",
-			// 			lineHeight: 2,
-			// 		},
-			// 	},
-			// },
-		},
-		interaction: {
-			intersect: false,
-			mode: "index",
 		},
 		scales: {
-			y: {
-				grid: {
-					drawBorder: false,
-					display: true,
-					drawOnChartArea: true,
-					drawTicks: false,
-					borderDash: [5, 5],
-				},
-				ticks: {
-					display: true,
-					padding: 10,
-					min: 0,
-					max: 10, // Your absolute max value
-					callback: function (value) {
-						return ((value / 10) * 100).toFixed(0) + "%"; // convert it to percentage
+			yAxes: [
+				{
+					gridLines: {
+						drawBorder: false,
+						display: false,
+						drawOnChartArea: true,
+						drawTicks: false,
+						borderDash: [5, 5],
 					},
-					color: "#b2b9bf",
-					font: {
-						size: 14,
-						family: "Nunito Sans",
-						style: "bold",
+					ticks: {
+						display: true,
+						padding: 10,
+						min: 0,
+						max: 600, // Your absolute max value
+						callback: function (value) {
+							console.log("value", value);
+							return ((value / 600) * 100).toFixed(0) + "%"; // convert it to percentage
+						},
+						beginAtZero: true,
+						fontSize: 14,
+						fontColor: "#b2b9bf",
+						fontFamily: "Nunito Sans",
+						fontStyle: "bold",
+						lineHeight: 2,
+					},
+					scaleLabel: {
+						display: false,
+						labelString: "Percentage",
+					},
+				},
+			],
+			xAxes: [
+				{
+					gridLines: {
+						drawBorder: false,
+						display: false,
+						drawOnChartArea: false,
+						drawTicks: false,
+						borderDash: [5, 5],
+					},
+					ticks: {
+						display: true,
+						padding: 10,
+						suggestedMin: 0,
+						suggestedMax: 800,
+						beginAtZero: true,
+						fontColor: "#b2b9bf",
+						fontSize: 14,
+						fontFamily: "Nunito Sans",
+						fontStyle: "bold",
 						lineHeight: 2,
 					},
 				},
-				scaleLabel: {
-					display: true,
-					labelString: "Percentage",
-				},
-			},
-			x: {
-				grid: {
-					drawBorder: false,
-					display: false,
-					drawOnChartArea: false,
-					drawTicks: false,
-					borderDash: [5, 5],
-				},
-				ticks: {
-					display: true,
-					padding: 10,
-					suggestedMin: 0,
-					suggestedMax: 800,
-					beginAtZero: true,
-					color: "#b2b9bf",
-					font: {
-						size: 14,
-						family: "Nunito Sans",
-						style: "bold",
-						lineHeight: 2,
-					},
-				},
-			},
+			],
 		},
 	},
 };
@@ -265,7 +262,11 @@ export const configChartLine2 = {
 				pointRadius: 0,
 				borderColor: "#f82c91",
 				borderWidth: 3,
-				backgroundColor: `rgba(248, 44, 145, 0.3)`,
+				backgroundColor: [
+					"rgba(248, 44, 145, 0.3)",
+					"rgba(248, 44, 145, 0.2)",
+					"rgba(248, 44, 145, 0.1)",
+				],
 				fill: true,
 				data: [55, 60, 200, 280, 300, 450, 380, 280, 527],
 				maxBarThickness: 6,
@@ -277,7 +278,11 @@ export const configChartLine2 = {
 				pointRadius: 0,
 				borderColor: "#38d6ae",
 				borderWidth: 3,
-				backgroundColor: `rgba(56, 214, 174,0.3)`,
+				backgroundColor: [
+					"rgba(56, 214, 174,0.3)",
+					"rgba(56, 214, 174, 0.2)",
+					"rgba(56, 214, 174, 0.1)",
+				],
 				fill: true,
 				data: [50, 40, 300, 220, 500, 250, 400, 230, 505],
 				maxBarThickness: 6,
@@ -289,7 +294,11 @@ export const configChartLine2 = {
 				pointRadius: 0,
 				borderColor: "#611bff",
 				borderWidth: 3,
-				backgroundColor: `rgba(97, 27, 255, 0.2)`,
+				backgroundColor: [
+					"rgba(97, 27, 255, 0.2)",
+					"rgba(97, 27, 255, 0.1)",
+					"rgba(97, 27, 255, 0.05)",
+				],
 				fill: true,
 				data: [30, 90, 40, 140, 290, 290, 340, 250, 400],
 				maxBarThickness: 6,
@@ -301,7 +310,11 @@ export const configChartLine2 = {
 				pointRadius: 0,
 				borderColor: "#f94902",
 				borderWidth: 3,
-				backgroundColor: `rgba(249, 73, 2, 0.2)`,
+				backgroundColor: [
+					"rgba(249, 73, 2, 0.2)",
+					"rgba(249, 73, 2, 0.1)",
+					"rgba(249, 73, 2, 0.05)",
+				],
 				fill: true,
 				data: [35, 70, 200, 100, 190, 390, 370, 240, 450],
 				maxBarThickness: 6,
@@ -311,86 +324,73 @@ export const configChartLine2 = {
 	options: {
 		responsive: true,
 		maintainAspectRatio: false,
-
+		title: {
+			display: false,
+			text: "Chart.js line Chart - Multi Axis",
+		},
+		tooltips: {
+			intersect: false,
+			mode: "index",
+		},
 		legend: {
 			display: true,
 			position: "bottom",
 			labels: {
-				color: "#b2b9bf",
-				font: {
-					size: 14,
-					family: "Nunito Sans",
-					style: "bold",
-					lineHeight: 2,
-				},
+				fontSize: 14,
+				fontColor: "#b2b9bf",
+				fontFamily: "Nunito Sans",
+				fontStyle: "bold",
+				lineHeight: 2,
 			},
 		},
-		plugins: {
-			// legend: {
-			// 	display: true,
-			// 	position: "bottom",
-			// 	labels: {
-			// 		color: "#b2b9bf",
-			// 		font: {
-			// 			size: 14,
-			// 			family: "Nunito Sans",
-			// 			style: "bold",
-			// 			lineHeight: 2,
-			// 		},
-			// 	},
-			// },
-		},
-		interaction: {
-			intersect: false,
-			mode: "index",
-		},
+
 		scales: {
-			y: {
-				grid: {
-					drawBorder: false,
-					display: true,
-					drawOnChartArea: true,
-					drawTicks: false,
-					borderDash: [5, 5],
-				},
-				ticks: {
-					display: true,
-					padding: 10,
-					suggestedMin: 0,
-					suggestedMax: 800,
-					beginAtZero: true,
-					color: "#b2b9bf",
-					font: {
-						size: 14,
-						family: "Nunito Sans",
-						style: "bold",
+			yAxes: [
+				{
+					gridLines: {
+						drawBorder: false,
+						display: true,
+						drawOnChartArea: true,
+						drawTicks: false,
+						borderDash: [5, 5],
+					},
+					ticks: {
+						display: true,
+						padding: 10,
+						suggestedMin: 0,
+						suggestedMax: 600,
+						beginAtZero: true,
+						fontSize: 14,
+						fontColor: "#b2b9bf",
+						fontFamily: "Nunito Sans",
+						fontStyle: "bold",
 						lineHeight: 2,
 					},
 				},
-			},
-			x: {
-				grid: {
-					drawBorder: false,
-					display: false,
-					drawOnChartArea: false,
-					drawTicks: false,
-					borderDash: [5, 5],
-				},
-				ticks: {
-					display: true,
-					padding: 10,
-					suggestedMin: 0,
-					suggestedMax: 800,
-					beginAtZero: true,
-					color: "#b2b9bf",
-					font: {
-						size: 14,
-						family: "Nunito Sans",
-						style: "bold",
+			],
+			xAxes: [
+				{
+					gridLines: {
+						drawBorder: false,
+						display: false,
+						drawOnChartArea: false,
+						drawTicks: false,
+						borderDash: [5, 5],
+					},
+					ticks: {
+						display: true,
+						padding: 10,
+						suggestedMin: 0,
+						suggestedMax: 600,
+						beginAtZero: true,
+						fontColor: "#b2b9bf",
+						fontSize: 14,
+						fontFamily: "Nunito Sans",
+						fontStyle: "bold",
 						lineHeight: 2,
 					},
 				},
-			},
+			],
 		},
 	},
 };
@@ -437,79 +437,76 @@ export const mixChartData = {
 			display: false,
 			text: "Chart.js mixed Chart - Multi Axis",
 		},
-
+		tooltips: {
+			intersect: false,
+			mode: "index",
+		},
 		legend: {
 			display: true,
 			position: "bottom",
 			labels: {
-				color: "#b2b9bf",
-				font: {
-					size: 14,
-					family: "Nunito Sans",
-					style: "bold",
-					lineHeight: 2,
-				},
+				fontSize: 14,
+				fontColor: "#b2b9bf",
+				fontFamily: "Nunito Sans",
+				fontStyle: "bold",
+				lineHeight: 2,
 			},
-		},
-
-		interaction: {
-			intersect: false,
-			mode: "index",
 		},
 		scales: {
-			y: {
-				grid: {
-					drawBorder: false,
-					display: true,
-					drawOnChartArea: true,
-					drawTicks: false,
-					borderDash: [5, 5],
+			yAxes: [
+				{
+					gridLines: {
+						drawBorder: false,
+						display: true,
+						drawOnChartArea: true,
+						drawTicks: false,
+						borderDash: [5, 5],
+					},
+					ticks: {
+						display: true,
+						padding: 10,
+						min: 0,
+						max: 500, // Your absolute max value
+						callback: function (value) {
+							return ((value / 500) * 100).toFixed(0) + "%"; // convert it to percentage
+						},
+						position: "bottom",
+						fontColor: "#b2b9bf",
+						fontSize: 14,
+						fontFamily: "Nunito Sans",
+						fontStyle: "bold",
+						lineHeight: 2,
+					},
+
+					scaleLabel: {
+						display: false,
+						labelString: "Percentage",
+					},
 				},
-				ticks: {
-					display: true,
-					padding: 10,
-					min: 0,
-					// max: this.max, // Your absolute max value
-					// callback: function (value) {
-					// 	return ((value / this.max) * 100).toFixed(0) + "%"; // convert it to percentage
-					// },
-					color: "#b2b9bf",
-					position: "bottom",
-					font: {
-						size: 14,
-						family: "Nunito Sans",
-						style: "bold",
+			],
+			xAxes: [
+				{
+					gridLines: {
+						drawBorder: false,
+						display: false,
+						drawOnChartArea: false,
+						drawTicks: false,
+						borderDash: [5, 5],
+					},
+					ticks: {
+						display: true,
+						padding: 10,
+						suggestedMin: 0,
+						suggestedMax: 800,
+						beginAtZero: true,
+						fontColor: "#b2b9bf",
+						fontSize: 14,
+						fontFamily: "Nunito Sans",
+						fontStyle: "bold",
 						lineHeight: 2,
 					},
 				},
-				scaleLabel: {
-					display: true,
-					labelString: "Percentage",
-				},
-			},
-			x: {
-				grid: {
-					drawBorder: false,
-					display: false,
-					drawOnChartArea: false,
-					drawTicks: false,
-					borderDash: [5, 5],
-				},
-				ticks: {
-					display: true,
-					padding: 10,
-					suggestedMin: 0,
-					suggestedMax: 800,
-					beginAtZero: true,
-					color: "#b2b9bf",
-					font: {
-						size: 14,
-						family: "Nunito Sans",
-						style: "bold",
-						lineHeight: 2,
-					},
-				},
-			},
+			],
 		},
 	},
 };
