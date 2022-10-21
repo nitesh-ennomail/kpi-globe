@@ -26,37 +26,178 @@ function EnrollmentEngagement(props) {
 	const [chartData1, setChartData1] = useState({});
 	const [testData, setTestData] = useState(configConversionChart);
 	const [mixData, setMixData] = useState(mixChartData);
-	const [nbx, setNbx] = useState();
 
+	//API
+	const [heatMapData, setHeatMapData] = useState();
+	const [heatMapXData, setHeatMapXData] = useState();
+	const [heatMapYData, setHeatMapYData] = useState();
+	const [funnelChartData, setFunnelChartData] = useState();
+	const [lineChartData, setLineChartData] = useState(null);
+	const [totalEnrollment, setTotalEnrollment] = useState(null);
+	const [topEngagement, setTopEngagement] = useState(null);
+
+	const [nbx, setNbx] = useState();
 	const [filter, setFilter] = useState(filters);
 
 	useEffect(() => {
-		const fetchPrices = async () => {
+		const fetchEnrollData = async () => {
+			alert("called");
+			// var ctx = document.getElementById("line-chart");
+
+			// var gradientStroke1 = ctx.createLinearGradient(56, 214, 174, 50);
+			// gradientStroke1.addColorStop(1, "rgba(56, 214, 174,0.3)");
+			// gradientStroke1.addColorStop(0.2, "rgba(56, 214, 174, 0.2)");
+			// gradientStroke1.addColorStop(0, "rgba(56, 214, 174, 0.1)"); //purple colors
+			// var gradientStroke3 = ctx.createLinearGradient(233, 236, 239, 50);
+			// gradientStroke3.addColorStop(1, "rgba(248, 44, 145, 0.3)");
+			// gradientStroke3.addColorStop(0.2, "rgba(248, 44, 145, 0.2)");
+			// gradientStroke3.addColorStop(0, "rgba(248, 44, 145, 0.1)");
+			// var gradientStroke2 = ctx.createLinearGradient(56, 214, 174, 50);
+			// gradientStroke2.addColorStop(1, "rgba(97, 27, 255, 0.2)");
+			// gradientStroke2.addColorStop(0.2, "rgba(97, 27, 255, 0.1)");
+			// gradientStroke2.addColorStop(0, "rgba(97, 27, 255, 0.05)"); //purple colors
+
 			const res = await fetch(
 				"https://kpi-tool.psglobalgroup.com/api/enrollment-engagement.php",
 				{ key: filter }
 			);
 			const data = await res.json();
 			console.log("data ==== ", data.total_nbrx_enrollment);
-			// setChartData1({
-			// 	labels: data.data.map((crypto) => crypto.name),
-			// 	datasets: [
-			// 		{
-			// 			label: "Price in USD",
-			// 			data: data.data.map((crypto) => crypto.priceUsd),
-			// 			backgroundColor: [
-			// 				"#ffbb11",
-			// 				"#ecf0f1",
-			// 				"#50AF95",
-			// 				"#f3ba2f",
-			// 				"#2a71d0",
-			// 			],
-			// 		},
-			// 	],
-			// });
+
+			// set api data
 			setNbx(data.total_nbrx_enrollment);
+			setHeatMapData(data.heatmap);
+			setHeatMapXData(data.heatmap_xaxis);
+			setHeatMapYData(data.heatmap_yaxis);
+			setFunnelChartData({
+				displayPercent: true,
+				labels: ["Call Attempts", "Calls Completed", "Patients Enrolled"],
+				colors: [["#f6ec70", "#f971b4", "#f82c91"]],
+				values: data.funnedata,
+			});
+			setLineChartData({
+				type: "line",
+				data: {
+					labels: data.preferenceMonth,
+					datasets: [
+						{
+							label: "Phone",
+							tension: 0.4,
+							borderWidth: 0,
+							pointRadius: 0,
+							borderColor: "#f82c91",
+							borderWidth: 3,
+							backgroundColor: `rgba(248, 44, 145, 0.2)`,
+							fill: true,
+							data: data.preferences.Phone,
+							maxBarThickness: 6,
+						},
+						{
+							label: "Email",
+							tension: 0.4,
+							borderWidth: 0,
+							pointRadius: 0,
+							borderColor: "#38d6ae",
+							borderWidth: 3,
+							// backgroundColor: gradientStroke1,
+							backgroundColor: `rgba(56, 214, 174, 0.2)`,
+							fill: true,
+							data: data.preferences.Email,
+							maxBarThickness: 6,
+						},
+						{
+							label: "Text",
+							tension: 0.4,
+							borderWidth: 0,
+							pointRadius: 0,
+							borderColor: "#611bff",
+							borderWidth: 3,
+							// backgroundColor: gradientStroke2,
+							backgroundColor: "rgba(97, 27, 255, 0.1)",
+							fill: true,
+							data: data.preferences.Text,
+							maxBarThickness: 6,
+						},
+					],
+				},
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					legend: {
+						display: true,
+						position: "bottom",
+					},
+					plugins: {
+						legend: {
+							color: "#b2b9bf",
+							font: {
+								size: 14,
+								family: "Nunito Sans",
+								style: "bold",
+								lineHeight: 2,
+							},
+						},
+					},
+					interaction: {
+						intersect: false,
+						mode: "index",
+					},
+					scales: {
+						y: {
+							grid: {
+								drawBorder: false,
+								display: true,
+								drawOnChartArea: true,
+								drawTicks: false,
+								borderDash: [5, 5],
+							},
+							ticks: {
+								display: true,
+								padding: 10,
+								suggestedMin: 0,
+								suggestedMax: 800,
+								beginAtZero: true,
+								color: "#b2b9bf",
+								font: {
+									size: 14,
+									family: "Nunito Sans",
+									style: "bold",
+									lineHeight: 2,
+								},
+							},
+						},
+						x: {
+							grid: {
+								drawBorder: false,
+								display: false,
+								drawOnChartArea: false,
+								drawTicks: false,
+								borderDash: [5, 5],
+							},
+							ticks: {
+								display: true,
+								padding: 10,
+								suggestedMin: 0,
+								suggestedMax: 800,
+								beginAtZero: true,
+								color: "#b2b9bf",
+								font: {
+									size: 14,
+									family: "Nunito Sans",
+									style: "bold",
+									lineHeight: 2,
+								},
+							},
+						},
+					},
+				},
+			});
+			setTotalEnrollment(data.total_enrollment);
+			setTopEngagement(data.top_engagement);
+
+			// set api data
 		};
-		fetchPrices();
+		fetchEnrollData();
 	}, [filters, nbx]);
 
 	console.log("chartData1", chartData1);
@@ -121,7 +262,7 @@ function EnrollmentEngagement(props) {
 												Patients Enrolled
 											</p>
 											<h5 className="font-weight-bolder mb-0">
-												<span id="total_enrollment_num" />
+												<span id="total_enrollment_num">{totalEnrollment}</span>
 												<span
 													className="text-danger text-sm font-weight-bolder"
 													id="total_enrollment_percent">
@@ -152,7 +293,7 @@ function EnrollmentEngagement(props) {
 												Preferred Communication Type
 											</p>
 											<h5 className="font-weight-bolder mb-0">
-												<span id="top_engagement_num" />
+												<span id="top_engagement_num">{topEngagement}</span>
 												<span
 													className="text-danger text-sm font-weight-bolder"
 													id="top_engagement_percent">
@@ -244,7 +385,13 @@ function EnrollmentEngagement(props) {
 								</div> */}
 							</div>
 						</div>
-						<HeatMapChart data={vennData} />
+						{heatMapData && (
+							<HeatMapChart
+								heatmap={heatMapData}
+								heatmap_xaxis={heatMapXData}
+								heatmap_yaxis={heatMapYData}
+							/>
+						)}
 						{/* <div id="heattime" /> */}
 					</div>
 				</div>
@@ -384,12 +531,15 @@ function EnrollmentEngagement(props) {
 								</div>
 							</div>
 						</div>
-						<FunnelChart
-							id="funnel_chart"
-							displayPercent={false}
-							direction="vertical"
-							data={funnelData1}
-						/>
+						{funnelChartData && (
+							<FunnelChart
+								id="funnel_chart"
+								displayPercent={false}
+								direction="vertical"
+								// data={funnelData1}
+								data={funnelChartData}
+							/>
+						)}
 						{/* <div className="funnel funnel-container" id="funnel_chart" />
 						<div id="f11" className="d-none" /> */}
 					</div>
@@ -463,7 +613,14 @@ function EnrollmentEngagement(props) {
 						</div>
 						<div className="card-body p-3">
 							<div className="chart min-height-300">
-								<LineChart id="line-chart" config={configLineChart} />
+								{lineChartData && (
+									<LineChart
+										id="line-chart"
+										// config={LineChartData}
+										config={lineChartData}
+										height="500"
+									/>
+								)}
 								{/* <canvas id="line-chart" className="chart-canvas" height={500} /> */}
 							</div>
 						</div>

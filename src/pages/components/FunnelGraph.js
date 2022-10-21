@@ -8,29 +8,15 @@ const FunnelGraphChart = ({
 	displayPercent = false,
 }) => {
 	// const [funnelData, setFunnelData] = useState(data);
-	console.log("displayPercent", displayPercent);
 	useEffect(() => {
 		let graph = new FunnelGraph({
 			container: `#${id}`,
 			gradientDirection: `${direction}`,
-			// gradientDirection: "vertical",
 			data: data,
 			displayPercent: displayPercent,
 			direction: `${direction}`,
-			// direction: "vertical",
-
-			// subLabelValue: "raw",
 		});
 		graph.draw();
-
-		// const funnelGraphc = new FunnelGraph({
-		// 	container: "#funnel",
-		// 	gradientDirection: "vertical",
-		// 	data: data,
-		// 	displayPercent: true,
-		// 	direction: "vertical",
-		// });
-		// funnelGraphc.draw();
 
 		// graph.updateData(data);
 		// graph.update(data);
