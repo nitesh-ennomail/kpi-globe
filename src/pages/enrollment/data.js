@@ -988,8 +988,6 @@ export const configPieChart = {
 	},
 };
 
-export const heatMapData={
-	yAxisHeatmap.data.setAll(data111.heatmap_yaxis);
-			xAxisHeatmap.data.setAll(data111.heatmap_xaxis);
-			seriesHeatmap.data.setAll(data111.heatmap);
-};
+// export const heatMapData={
+
+// };

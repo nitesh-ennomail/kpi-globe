@@ -18,6 +18,7 @@ import {
 import FunnelChart from "../components/FunnelGraph";
 import M_Chart from "../components/M_Chart";
 import HeatMapChart from "../components/HeatMapChart";
+import MeterChart from "../components/MeterChart";
 var filters = localStorage.getItem("filters");
 
 function EnrollmentEngagement(props) {
@@ -25,37 +26,38 @@ function EnrollmentEngagement(props) {
 	const [chartData1, setChartData1] = useState({});
 	const [testData, setTestData] = useState(configConversionChart);
 	const [mixData, setMixData] = useState(mixChartData);
+	const [nbx, setNbx] = useState();
 
 	const [filter, setFilter] = useState(filters);
 
-	// useEffect(() => {
-	// 	const fetchPrices = async () => {
-	// 		// setFilter(filters);
-	// 		const res = await fetch(
-	// 			"https://kpi-tool.psglobalgroup.com/api/enrollment-engagement.php",
-	// 			{ key: filter }
-	// 		);
-	// 		const data = await res.json();
-	// 		console.log("data ==== ", data);
-	// 		// setChartData1({
-	// 		// 	labels: data.data.map((crypto) => crypto.name),
-	// 		// 	datasets: [
-	// 		// 		{
-	// 		// 			label: "Price in USD",
-	// 		// 			data: data.data.map((crypto) => crypto.priceUsd),
-	// 		// 			backgroundColor: [
-	// 		// 				"#ffbb11",
-	// 		// 				"#ecf0f1",
-	// 		// 				"#50AF95",
-	// 		// 				"#f3ba2f",
-	// 		// 				"#2a71d0",
-	// 		// 			],
-	// 		// 		},
-	// 		// 	],
-	// 		// });
-	// 	};
-	// 	fetchPrices();
-	// }, [filters]);
+	useEffect(() => {
+		const fetchPrices = async () => {
+			const res = await fetch(
+				"https://kpi-tool.psglobalgroup.com/api/enrollment-engagement.php",
+				{ key: filter }
+			);
+			const data = await res.json();
+			console.log("data ==== ", data.total_nbrx_enrollment);
+			// setChartData1({
+			// 	labels: data.data.map((crypto) => crypto.name),
+			// 	datasets: [
+			// 		{
+			// 			label: "Price in USD",
+			// 			data: data.data.map((crypto) => crypto.priceUsd),
+			// 			backgroundColor: [
+			// 				"#ffbb11",
+			// 				"#ecf0f1",
+			// 				"#50AF95",
+			// 				"#f3ba2f",
+			// 				"#2a71d0",
+			// 			],
+			// 		},
+			// 	],
+			// });
+			setNbx(data.total_nbrx_enrollment);
+		};
+		fetchPrices();
+	}, [filters, nbx]);
 
 	console.log("chartData1", chartData1);
 
@@ -260,6 +262,9 @@ function EnrollmentEngagement(props) {
 									<i className="fas fa-info" aria-hidden="true" />
 								</button>
 								<div className="ms-auto">
+									<div id="exportmeterchart"></div>
+								</div>
+								{/* <div className="ms-auto">
 									<div className="dropdown pe-2">
 										<a
 											href="javascript:;"
@@ -307,10 +312,11 @@ function EnrollmentEngagement(props) {
 											</li>
 										</ul>
 									</div>
-								</div>
+								</div> */}
 							</div>
 						</div>
-						<div className="chartdiv" id="gague1" />
+						{nbx && <MeterChart total_nbrx_enrollment={nbx} />}
+						{/* <div className="chartdiv" id="gague1" /> */}
 					</div>
 				</div>
 			</div>
