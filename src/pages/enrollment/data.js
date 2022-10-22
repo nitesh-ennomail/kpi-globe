@@ -511,125 +511,125 @@ export const mixChartData = {
 	},
 };
 
-export const guideChartData = {
-	type: "bar",
-	data: {
-		labels: ["G1", "G2", "G3", "G4", "G5", "G6"],
-		datasets: [
-			{
-				type: "bar",
-				label: "Patients",
-				weight: 5,
-				tension: 0.5,
-				borderWidth: 0,
-				pointBackgroundColor: "#fa9cca",
-				borderColor: "#fa9cca",
-				backgroundColor: "#fa9cca",
-				borderRadius: 4,
-				borderSkipped: false,
-				data: [3, 4, 3, 3, 3, 1],
-				maxBarThickness: 10,
-			},
-			{
-				type: "line",
-				label: "Patients",
-				tension: 0.5,
-				borderWidth: 0,
-				pointRadius: 0,
-				pointBackgroundColor: "#fa9cca",
-				borderColor: "#fa9cca",
-				borderWidth: 3,
-				// backgroundColor: gradientStroke3,
-				data: [3, 4, 3, 3, 3, 1],
-				fill: true,
-			},
-		],
-	},
-	options: {
-		responsive: true,
-		maintainAspectRatio: false,
-		legend: {
-			display: true,
-			position: "bottom",
-			labels: {
-				color: "#b2b9bf",
-				font: {
-					size: 14,
-					family: "Nunito Sans",
-					style: "bold",
-					lineHeight: 2,
-				},
-			},
-		},
-		plugins: {
-			// legend: {
-			// 	display: true,
-			// 	position: "bottom",
-			// 	labels: {
-			// 		color: "#b2b9bf",
-			// 		font: {
-			// 			size: 14,
-			// 			family: "Nunito Sans",
-			// 			style: "bold",
-			// 			lineHeight: 2,
-			// 		},
-			// 	},
-			// },
-		},
-		interaction: {
-			intersect: false,
-			mode: "index",
-		},
-		scales: {
-			y: {
-				grid: {
-					drawBorder: false,
-					display: true,
-					drawOnChartArea: true,
-					drawTicks: false,
-					borderDash: [5, 5],
-				},
-				ticks: {
-					display: true,
-					padding: 10,
-					suggestedMin: 0,
-					suggestedMax: 800,
-					beginAtZero: true,
-					color: "#b2b9bf",
-					font: {
-						size: 14,
-						family: "Nunito Sans",
-						style: "bold",
-						lineHeight: 2,
-					},
-				},
-			},
-			x: {
-				grid: {
-					drawBorder: false,
-					display: true,
-					drawOnChartArea: true,
-					drawTicks: true,
-					borderDash: [5, 5],
-				},
-				ticks: {
-					display: true,
-					padding: 10,
-					suggestedMin: 0,
-					suggestedMax: 800,
-					beginAtZero: true,
-					color: "#b2b9bf",
-					font: {
-						size: 14,
-						family: "Nunito Sans",
-						style: "bold",
-						lineHeight: 2,
-					},
-				},
-			},
-		},
-	},
-};
+// export const guideChartData = {
+// 	type: "bar",
+// 	data: {
+// 		labels: ["G1", "G2", "G3", "G4", "G5", "G6"],
+// 		datasets: [
+// 			{
+// 				type: "bar",
+// 				label: "Patients",
+// 				weight: 5,
+// 				tension: 0.5,
+// 				borderWidth: 0,
+// 				pointBackgroundColor: "#fa9cca",
+// 				borderColor: "#fa9cca",
+// 				backgroundColor: "#fa9cca",
+// 				borderRadius: 4,
+// 				borderSkipped: false,
+// 				data: [3, 4, 3, 3, 3, 1],
+// 				maxBarThickness: 10,
+// 			},
+// 			{
+// 				type: "line",
+// 				label: "Patients",
+// 				tension: 0.5,
+// 				borderWidth: 0,
+// 				pointRadius: 0,
+// 				pointBackgroundColor: "#fa9cca",
+// 				borderColor: "#fa9cca",
+// 				borderWidth: 3,
+// 				// backgroundColor: gradientStroke3,
+// 				data: [3, 4, 3, 3, 3, 1],
+// 				fill: true,
+// 			},
+// 		],
+// 	},
+// 	options: {
+// 		responsive: true,
+// 		maintainAspectRatio: false,
+// 		legend: {
+// 			display: true,
+// 			position: "bottom",
+// 			labels: {
+// 				color: "#b2b9bf",
+// 				font: {
+// 					size: 14,
+// 					family: "Nunito Sans",
+// 					style: "bold",
+// 					lineHeight: 2,
+// 				},
+// 			},
+// 		},
+// 		plugins: {
+// 			// legend: {
+// 			// 	display: true,
+// 			// 	position: "bottom",
+// 			// 	labels: {
+// 			// 		color: "#b2b9bf",
+// 			// 		font: {
+// 			// 			size: 14,
+// 			// 			family: "Nunito Sans",
+// 			// 			style: "bold",
+// 			// 			lineHeight: 2,
+// 			// 		},
+// 			// 	},
+// 			// },
+// 		},
+// 		interaction: {
+// 			intersect: false,
+// 			mode: "index",
+// 		},
+// 		scales: {
+// 			y: {
+// 				grid: {
+// 					drawBorder: false,
+// 					display: true,
+// 					drawOnChartArea: true,
+// 					drawTicks: false,
+// 					borderDash: [5, 5],
+// 				},
+// 				ticks: {
+// 					display: true,
+// 					padding: 10,
+// 					suggestedMin: 0,
+// 					suggestedMax: 800,
+// 					beginAtZero: true,
+// 					color: "#b2b9bf",
+// 					font: {
+// 						size: 14,
+// 						family: "Nunito Sans",
+// 						style: "bold",
+// 						lineHeight: 2,
+// 					},
+// 				},
+// 			},
+// 			x: {
+// 				grid: {
+// 					drawBorder: false,
+// 					display: true,
+// 					drawOnChartArea: true,
+// 					drawTicks: true,
+// 					borderDash: [5, 5],
+// 				},
+// 				ticks: {
+// 					display: true,
+// 					padding: 10,
+// 					suggestedMin: 0,
+// 					suggestedMax: 800,
+// 					beginAtZero: true,
+// 					color: "#b2b9bf",
+// 					font: {
+// 						size: 14,
+// 						family: "Nunito Sans",
+// 						style: "bold",
+// 						lineHeight: 2,
+// 					},
+// 				},
+// 			},
+// 		},
+// 	},
+// };
 
 export const mixChartData2 = {
 	labels: ["SP1", "SP2", "SP3", "SP4", "SP5", "SP6", "SP7", "SP8"],
@@ -700,91 +700,79 @@ export const configConversionChart = {
 	options: {
 		responsive: true,
 		maintainAspectRatio: false,
+		title: {
+			display: false,
+			text: "Chart.js Line Chart - Multi Axis",
+		},
+		tooltips: {
+			intersect: false,
+			mode: "index",
+		},
 		legend: {
 			display: true,
 			position: "bottom",
 			labels: {
-				color: "#b2b9bf",
-				font: {
-					size: 14,
-					family: "Nunito Sans",
-					style: "bold",
-					lineHeight: 2,
-				},
+				fontSize: 14,
+				fontColor: "#b2b9bf",
+				fontFamily: "Nunito Sans",
+				fontStyle: "bold",
+				lineHeight: 2,
 			},
-		},
-		plugins: {
-			// legend: {
-			// 	display: true,
-			// 	position: "bottom",
-			// 	labels: {
-			// 		color: "#b2b9bf",
-			// 		font: {
-			// 			size: 14,
-			// 			family: "Nunito Sans",
-			// 			style: "bold",
-			// 			lineHeight: 2,
-			// 		},
-			// 	},
-			// },
-		},
-		interaction: {
-			intersect: false,
-			mode: "index",
 		},
 		scales: {
-			y: {
-				grid: {
-					drawBorder: false,
-					display: true,
-					drawOnChartArea: true,
-					drawTicks: false,
-					borderDash: [5, 5],
+			yAxes: [
+				{
+					gridLines: {
+						drawBorder: false,
+						display: true,
+						drawOnChartArea: true,
+						drawTicks: false,
+						borderDash: [5, 5],
+					},
+					ticks: {
+						display: true,
+						padding: 10,
+						position: "bottom",
+						// min: 0,
+						// max: 600, // Your absolute max value
+						// callback: function (value) {
+						// 	return ((value / 600) * 100).toFixed(0) + "%"; // convert it to percentage
+						// },
+						fontColor: "#b2b9bf",
+						fontSize: 14,
+						fontFamily: "Nunito Sans",
+						fontStyle: "bold",
+						lineHeight: 2,
+					},
+					scaleLabel: {
+						display: false,
+						labelString: "Percentage",
+					},
 				},
-				ticks: {
-					display: true,
-					padding: 10,
-					min: 0,
-					// max: this.max, // Your absolute max value
-					// callback: function (value) {
-					// 	return ((value / this.max) * 100).toFixed(0) + "%"; // convert it to percentage
-					// },
-					color: "#b2b9bf",
-					font: {
-						size: 14,
-						family: "Nunito Sans",
-						style: "bold",
+			],
+			xAxes: [
+				{
+					gridLines: {
+						drawBorder: false,
+						display: false,
+						drawOnChartArea: false,
+						drawTicks: false,
+						borderDash: [5, 5],
+					},
+					ticks: {
+						display: true,
+						padding: 10,
+						suggestedMin: 0,
+						suggestedMax: 800,
+						beginAtZero: true,
+						fontColor: "#b2b9bf",
+						fontSize: 14,
+						fontFamily: "Nunito Sans",
+						fontStyle: "bold",
 						lineHeight: 2,
 					},
 				},
-				scaleLabel: {
-					display: true,
-					labelString: "Percentage",
-				},
-			},
-			x: {
-				grid: {
-					drawBorder: false,
-					display: false,
-					drawOnChartArea: false,
-					drawTicks: false,
-					borderDash: [5, 5],
-				},
-				ticks: {
-					display: true,
-					padding: 10,
-					suggestedMin: 0,
-					suggestedMax: 800,
-					beginAtZero: true,
-					color: "#b2b9bf",
-					font: {
-						size: 14,
-						family: "Nunito Sans",
-						style: "bold",
-						lineHeight: 2,
-					},
-				},
-			},
+			],
 		},
 	},
 };
@@ -926,61 +914,68 @@ export const configPieChart = {
 	options: {
 		responsive: true,
 		maintainAspectRatio: false,
+		title: {
+			display: false,
+			text: "Chart.js pie Chart!",
+		},
+		tooltips: {
+			intersect: false,
+			mode: "index",
+		},
 		legend: {
 			display: true,
 			position: "bottom",
 			labels: {
-				color: "#b2b9bf",
-				font: {
-					size: 14,
-					family: "Nunito Sans",
-					style: "bold",
-					lineHeight: 2,
-				},
+				fontSize: 14,
+				fontColor: "#b2b9bf",
+				fontFamily: "Nunito Sans",
+				fontStyle: "bold",
+				lineHeight: 2,
 			},
 		},
-		plugins: {
-			// legend: {
-			// 	display: true,
-			// 	position: "bottom",
-			// 	labels: {
-			// 		color: "#b2b9bf",
-			// 		font: {
-			// 			size: 14,
-			// 			family: "Nunito Sans",
-			// 			style: "bold",
-			// 			lineHeight: 2,
-			// 		},
-			// 	},
-			// },
-		},
+
 		interaction: {
 			intersect: false,
 			mode: "index",
 		},
 		scales: {
-			y: {
-				grid: {
-					drawBorder: false,
-					display: false,
-					drawOnChartArea: false,
-					drawTicks: false,
+			yAxes: [
+				{
+					gridLines: {
+						drawBorder: false,
+						display: false,
+						drawOnChartArea: false,
+						drawTicks: false,
+						borderDash: [5, 5],
+					},
+					ticks: {
+						display: false,
+					},
 				},
-				ticks: {
-					display: false,
+			],
+			xAxes: [
+				{
+					gridLines: {
+						drawBorder: false,
+						display: false,
+						drawOnChartArea: false,
+						drawTicks: false,
+						borderDash: [5, 5],
+					},
+					ticks: {
+						display: false,
+						padding: 10,
+						suggestedMin: 0,
+						suggestedMax: 800,
+						beginAtZero: true,
+						fontColor: "#b2b9bf",
+						fontSize: 14,
+						fontFamily: "Nunito Sans",
+						fontStyle: "bold",
+						lineHeight: 2,
+					},
 				},
-			},
-			x: {
-				grid: {
-					drawBorder: false,
-					display: false,
-					drawOnChartArea: false,
-					drawTicks: false,
-				},
-				ticks: {
-					display: false,
-				},
-			},
+			],
 		},
 	},
 };

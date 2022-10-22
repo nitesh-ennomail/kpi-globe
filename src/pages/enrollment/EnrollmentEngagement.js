@@ -35,35 +35,20 @@ function EnrollmentEngagement(props) {
 	const [lineChartData, setLineChartData] = useState(null);
 	const [totalEnrollment, setTotalEnrollment] = useState(null);
 	const [topEngagement, setTopEngagement] = useState(null);
+	const [chartGuideChart, setChartGuideChart] = useState(null);
+	const [pieChartData, setPieChartData] = useState(null);
 
 	const [nbx, setNbx] = useState();
 	const [filter, setFilter] = useState(filters);
 
 	useEffect(() => {
 		const fetchEnrollData = async () => {
-			// alert("called");
-			// var ctx = document.getElementById("line-chart");
-
-			// var gradientStroke1 = ctx.createLinearGradient(56, 214, 174, 50);
-			// gradientStroke1.addColorStop(1, "rgba(56, 214, 174,0.3)");
-			// gradientStroke1.addColorStop(0.2, "rgba(56, 214, 174, 0.2)");
-			// gradientStroke1.addColorStop(0, "rgba(56, 214, 174, 0.1)"); //purple colors
-			// var gradientStroke3 = ctx.createLinearGradient(233, 236, 239, 50);
-			// gradientStroke3.addColorStop(1, "rgba(248, 44, 145, 0.3)");
-			// gradientStroke3.addColorStop(0.2, "rgba(248, 44, 145, 0.2)");
-			// gradientStroke3.addColorStop(0, "rgba(248, 44, 145, 0.1)");
-			// var gradientStroke2 = ctx.createLinearGradient(56, 214, 174, 50);
-			// gradientStroke2.addColorStop(1, "rgba(97, 27, 255, 0.2)");
-			// gradientStroke2.addColorStop(0.2, "rgba(97, 27, 255, 0.1)");
-			// gradientStroke2.addColorStop(0, "rgba(97, 27, 255, 0.05)"); //purple colors
-
 			const res = await fetch(
 				"https://kpi-tool.psglobalgroup.com/api/enrollment-engagement.php",
 				{ key: filter }
 			);
 			const data = await res.json();
-			console.log("data ==== ", data.total_nbrx_enrollment);
-
+			console.log("data ==== ", data);
 			// set api data
 			setNbx(data.total_nbrx_enrollment);
 			setHeatMapData(data.heatmap);
@@ -103,7 +88,6 @@ function EnrollmentEngagement(props) {
 							pointRadius: 0,
 							borderColor: "#38d6ae",
 							borderWidth: 3,
-							// backgroundColor: gradientStroke1,
 							backgroundColor: [
 								"rgba(56, 214, 174,0.3)",
 								"rgba(56, 214, 174, 0.2)",
@@ -120,9 +104,7 @@ function EnrollmentEngagement(props) {
 							pointRadius: 0,
 							borderColor: "#611bff",
 							borderWidth: 3,
-							// backgroundColor: gradientStroke2,
 							backgroundColor: [
-								// "rgba(56, 214, 174, 50)",
 								"rgba(97, 27, 255, 0.2)",
 								"rgba(97, 27, 255, 0.1)",
 								"rgba(97, 27, 255, 0.05)",
@@ -155,78 +137,30 @@ function EnrollmentEngagement(props) {
 							lineHeight: 2,
 						},
 					},
-					// scales: {
-					// 	yAxes: [
-					// 		{
-					// 			gridLines: {
-					// 				drawBorder: false,
-					// 				display: true,
-					// 				drawOnChartArea: true,
-					// 				drawTicks: false,
-					// 				borderDash: [5, 5],
-					// 			},
-					// 			ticks: {
-					// 				display: true,
-					// 				padding: 10,
-					// 				suggestedMin: 0,
-					// 				suggestedMax: 800,
-					// 				beginAtZero: true,
-					// 				fontSize: 14,
-					// 				fontColor: "#b2b9bf",
-					// 				fontFamily: "Nunito Sans",
-					// 				fontStyle: "bold",
-					// 				lineHeight: 2,
-					// 			},
-					// 		},
-					// 	],
-					// 	xAxes: [
-					// 		{
-					// 			gridLines: {
-					// 				drawBorder: false,
-					// 				display: false,
-					// 				drawOnChartArea: false,
-					// 				drawTicks: false,
-					// 				borderDash: [5, 5],
-					// 			},
-					// 			ticks: {
-					// 				display: true,
-					// 				padding: 10,
-					// 				suggestedMin: 0,
-					// 				suggestedMax: 800,
-					// 				beginAtZero: true,
-					// 				fontSize: 14,
-					// 				fontColor: "#b2b9bf",
-					// 				fontFamily: "Nunito Sans",
-					// 				fontStyle: "bold",
-					// 				lineHeight: 2,
-					// 			},
-					// 		},
-					// 	],
-					// },
 					scales: {
-						// yAxes: [
-						// 	{
-						// 		gridLines: {
-						// 			drawBorder: false,
-						// 			display: false,
-						// 			drawOnChartArea: true,
-						// 			drawTicks: false,
-						// 			borderDash: [5, 5],
-						// 		},
-						// 		ticks: {
-						// 			display: true,
-						// 			padding: 10,
-						// 			suggestedMin: 0,
-						// 			suggestedMax: 600,
-						// 			beginAtZero: true,
-						// 			fontSize: 14,
-						// 			fontColor: "#b2b9bf",
-						// 			fontFamily: "Nunito Sans",
-						// 			fontStyle: "bold",
-						// 			lineHeight: 2,
-						// 		},
-						// 	},
-						// ],
+						yAxes: [
+							{
+								gridLines: {
+									drawBorder: false,
+									display: false,
+									drawOnChartArea: true,
+									drawTicks: false,
+									borderDash: [5, 5],
+								},
+								ticks: {
+									display: true,
+									padding: 10,
+									suggestedMin: 1,
+									suggestedMax: 5,
+									beginAtZero: true,
+									fontSize: 14,
+									fontColor: "#b2b9bf",
+									fontFamily: "Nunito Sans",
+									fontStyle: "bold",
+									lineHeight: 2,
+								},
+							},
+						],
 						xAxes: [
 							{
 								gridLines: {
@@ -240,7 +174,7 @@ function EnrollmentEngagement(props) {
 									display: true,
 									padding: 10,
 									suggestedMin: 0,
-									suggestedMax: 600,
+									suggestedMax: 800,
 									beginAtZero: true,
 									fontColor: "#b2b9bf",
 									fontSize: 14,
@@ -255,6 +189,200 @@ function EnrollmentEngagement(props) {
 			});
 			setTotalEnrollment(data.total_enrollment);
 			setTopEngagement(data.top_engagement);
+			setChartGuideChart({
+				type: "bar",
+				data: {
+					labels: data.guidechartLabel,
+					datasets: [
+						{
+							type: "bar",
+							label: "Patients",
+							weight: 5,
+							tension: 0.5,
+							borderWidth: 0,
+							pointBackgroundColor: "#fa9cca",
+							borderColor: "#fa9cca",
+							backgroundColor: "#fa9cca",
+							borderRadius: 4,
+							borderSkipped: false,
+							data: data.guidechartValued,
+							maxBarThickness: 10,
+						},
+						{
+							type: "line",
+							label: "Patients",
+							tension: 0.5,
+							borderWidth: 0,
+							pointRadius: 0,
+							pointBackgroundColor: "#fa9cca",
+							borderColor: "#fa9cca",
+							borderWidth: 3,
+							// backgroundColor: [
+							// 	"rgba(248, 44, 145, 0.3)",
+							// 	"rgba(248, 44, 145, 0.1)",
+							// 	"rgba(248, 44, 145, 0.)",
+							// ],
+							data: data.guidechartValued,
+							fill: true,
+						},
+					],
+				},
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					title: {
+						display: false,
+						text: "Chart.js mixed Chart - Multi Axis",
+					},
+					tooltips: {
+						intersect: false,
+						mode: "index",
+					},
+					legend: {
+						display: true,
+						position: "bottom",
+						labels: {
+							fontSize: 14,
+							fontColor: "#b2b9bf",
+							fontFamily: "Nunito Sans",
+							fontStyle: "bold",
+							lineHeight: 2,
+						},
+					},
+					scales: {
+						yAxes: [
+							{
+								gridLines: {
+									drawBorder: false,
+									display: true,
+									drawOnChartArea: true,
+									drawTicks: false,
+									borderDash: [5, 5],
+								},
+								ticks: {
+									display: true,
+									padding: 10,
+									position: "bottom",
+									fontColor: "#b2b9bf",
+									fontSize: 14,
+									fontFamily: "Nunito Sans",
+									fontStyle: "bold",
+									lineHeight: 2,
+								},
+							},
+						],
+						xAxes: [
+							{
+								gridLines: {
+									drawBorder: false,
+									display: false,
+									drawOnChartArea: false,
+									drawTicks: false,
+									borderDash: [5, 5],
+								},
+								ticks: {
+									display: true,
+									padding: 10,
+									suggestedMin: 0,
+									suggestedMax: 800,
+									beginAtZero: true,
+									fontColor: "#b2b9bf",
+									fontSize: 14,
+									fontFamily: "Nunito Sans",
+									fontStyle: "bold",
+									lineHeight: 2,
+								},
+							},
+						],
+					},
+				},
+			});
+			setPieChartData({
+				type: "pie",
+				data: {
+					labels: data.piechartLabel,
+					datasets: [
+						{
+							label: "Time",
+							weight: 9,
+							cutout: 0,
+							tension: 0.9,
+							pointRadius: 2,
+							borderWidth: 0,
+							backgroundColor: ["#611bff", "#38d6ae", "#f82c91"],
+							data: data.piechartValued,
+							fill: false,
+						},
+					],
+				},
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					title: {
+						display: false,
+						text: "Chart.js pie Chart!",
+					},
+					tooltips: {
+						intersect: false,
+						mode: "index",
+					},
+					legend: {
+						display: true,
+						position: "bottom",
+						labels: {
+							fontSize: 14,
+							fontColor: "#b2b9bf",
+							fontFamily: "Nunito Sans",
+							fontStyle: "bold",
+							lineHeight: 2,
+						},
+					},
+
+					interaction: {
+						intersect: false,
+						mode: "index",
+					},
+					scales: {
+						yAxes: [
+							{
+								gridLines: {
+									drawBorder: false,
+									display: false,
+									drawOnChartArea: false,
+									drawTicks: false,
+									borderDash: [5, 5],
+								},
+								ticks: {
+									display: false,
+								},
+							},
+						],
+						xAxes: [
+							{
+								gridLines: {
+									drawBorder: false,
+									display: false,
+									drawOnChartArea: false,
+									drawTicks: false,
+									borderDash: [5, 5],
+								},
+								ticks: {
+									display: false,
+									padding: 10,
+									suggestedMin: 0,
+									suggestedMax: 800,
+									beginAtZero: true,
+									fontColor: "#b2b9bf",
+									fontSize: 14,
+									fontFamily: "Nunito Sans",
+									fontStyle: "bold",
+									lineHeight: 2,
+								},
+							},
+						],
+					},
+				},
+			});
 
 			// set api data
 		};
@@ -677,7 +805,6 @@ function EnrollmentEngagement(props) {
 								{lineChartData && (
 									<LineChart
 										id="line-chart"
-										// config={LineChartData}
 										config={lineChartData}
 										height="500"
 									/>
@@ -767,6 +894,7 @@ function EnrollmentEngagement(props) {
 								<LineChart
 									id="conversion-chart"
 									config={configConversionChart}
+									height={500}
 								/>
 							</div>
 						</div>
@@ -842,11 +970,14 @@ function EnrollmentEngagement(props) {
 						</div>
 						<div className="card-body">
 							<div className="chart">
-								<M_Chart
-									id="mixed-chart"
-									// data={guideChartData}
-									config={guideChartData}
-								/>
+								{chartGuideChart && (
+									<LineChart
+										id="mixed-chart"
+										config={chartGuideChart}
+										height={500}
+									/>
+								)}
+								{/* <M_Chart id="mixed-chart" config={guideChartData} /> */}
 								{/* <canvas
 									id="mixed-chart"
 									className="chart-canvas"
@@ -928,7 +1059,13 @@ function EnrollmentEngagement(props) {
 						</div>
 						<div className="card-body p-3">
 							<div className="chart">
-								<LineChart id="pie-chart" config={configPieChart} />
+								{pieChartData && (
+									<LineChart
+										id="pie-chart"
+										config={pieChartData}
+										height={400}
+									/>
+								)}
 
 								{/* <canvas id="pie-chart" className="chart-canvas" height={400} /> */}
 							</div>
