@@ -1,12 +1,14 @@
 import React, { useEffect, useLayoutEffect } from "react";
-import { home_driver } from "../comman/Constant";
-import { appendScript } from "../utils/appendScript";
-import { removeScript } from "../utils/removeScript";
+import LineChart from "../components/LineChart";
+// import { home_driver } from "../comman/Constant";
+// import { appendScript } from "../utils/appendScript";
+// import { removeScript } from "../utils/removeScript";
+import { lineChartData, mixChartData } from "./data";
 function HomeDriver(props) {
 	useLayoutEffect(() => {
-		appendScript(home_driver);
+		// appendScript(home_driver);
 		return () => {
-			removeScript(home_driver);
+			// removeScript(home_driver);
 			// root.dispose();
 		};
 	}, []);
@@ -138,10 +140,15 @@ function HomeDriver(props) {
                   </div>
                   No Access to chart */}
 
-									<canvas
+									<LineChart
+										id="mixed-chart-2"
+										config={mixChartData}
+										height="500"
+									/>
+									{/* <canvas
 										id="mixed-chart"
 										className="chart-canvas"
-										height="500"></canvas>
+										height="500"></canvas> */}
 								</div>
 							</div>
 						</div>
@@ -214,10 +221,15 @@ function HomeDriver(props) {
 							</div>
 							<div className="card-body p-3">
 								<div className="chart">
-									<canvas
+									<LineChart
+										id="chart-line-2"
+										config={lineChartData}
+										height="500"
+									/>
+									{/* <canvas
 										id="chart-line"
 										className="chart-canvas"
-										height="500"></canvas>
+										height="500"></canvas> */}
 								</div>
 							</div>
 						</div>
