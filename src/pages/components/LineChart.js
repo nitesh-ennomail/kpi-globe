@@ -14,6 +14,7 @@ export default function LineChart({ id, config, height = "500" }) {
 			// }
 			config
 		);
+		myLineChart.update();
 	}, []);
 
 	return <canvas id={id} className="chart-canvas" height={height} />;
