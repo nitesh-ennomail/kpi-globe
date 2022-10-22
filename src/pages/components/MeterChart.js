@@ -7,11 +7,15 @@ import am5themes_Responsive from "@amcharts/amcharts5/themes/Responsive";
 import * as am5plugins_exporting from "@amcharts/amcharts5/plugins/exporting";
 import { useLayoutEffect, useEffect } from "react";
 
-function MeterChart({ total_nbrx_enrollment = 25 }) {
+function MeterChart({
+	total_nbrx_enrollment = 25,
+	id = "gague1",
+	interval = false,
+}) {
 	// Create root
 	useLayoutEffect(() => {
 		// Radar chart begins
-		let rootRadar = am5.Root.new("gague1");
+		let rootRadar = am5.Root.new(`${id}`);
 		let doyleTheme = am5.Theme.new(rootRadar);
 		doyleTheme.rule("Label").setAll({
 			fill: am5.color(0xb2b9bf),
@@ -111,6 +115,33 @@ function MeterChart({ total_nbrx_enrollment = 25 }) {
 			var value = axisDataItemRadar.get("value");
 			labelRadar.set("text", Math.round(value).toString() + "%");
 		});
+		{
+			interval &&
+				setInterval(function () {
+					var value = Math.round(Math.random() * 100);
+
+					axisDataItemRadar.animate({
+						key: "value",
+						to: value,
+						duration: 500,
+						easing: am5.ease.out(am5.ease.cubic),
+					});
+
+					axisRange0Radar.animate({
+						key: "endValue",
+						to: value,
+						duration: 500,
+						easing: am5.ease.out(am5.ease.cubic),
+					});
+
+					axisRange1Radar.animate({
+						key: "value",
+						to: value,
+						duration: 500,
+						easing: am5.ease.out(am5.ease.cubic),
+					});
+				}, 2000);
+		}
 
 		chartRadar.bulletsContainer.set("mask", undefined);
 		var colorSet = am5.ColorSet.new(rootRadar, {});
@@ -199,7 +230,7 @@ function MeterChart({ total_nbrx_enrollment = 25 }) {
 	}, []);
 	return (
 		<>
-			<div id="gague1" className="chartdiv" />
+			<div id={id} className="chartdiv" />
 			{/* <div className="chartdiv-legend" id="chartdiv-legend" /> */}
 			{/* <div id="chartdiv" style={{ width: "100%", height: "500px" }}></div> */}
 		</>

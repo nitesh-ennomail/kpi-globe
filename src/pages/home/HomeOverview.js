@@ -2,6 +2,7 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 import FunnelChart from "../components/FunnelGraph";
 import { funnelData } from "./data";
 import LineChart from "../components/LineChart";
+import MeterChart from "../components/MeterChart";
 
 function HomeOverview(props) {
 	const [lineChartData, setLineChartData] = useState(null);
@@ -475,7 +476,7 @@ function HomeOverview(props) {
 								Source: Ashfield and claims data">
 										<i className="fas fa-info" aria-hidden="true" />
 									</button>
-									<div className="ms-auto">
+									{/* <div className="ms-auto">
 										<div className="dropdown pe-2">
 											<a
 												// href="javascript:;"
@@ -526,10 +527,17 @@ function HomeOverview(props) {
 												</li>
 											</ul>
 										</div>
+									</div> */}
+									<div className="ms-auto">
+										<div id="exportmeterchart"></div>
 									</div>
 								</div>
 							</div>
-							<div className="chartdiv" id="enroll-nbrx" />
+							<MeterChart
+								total_nbrx_enrollment={52}
+								id="enroll-nbrx"
+								interval={true}
+							/>
 						</div>
 					</div>
 					<div className="col-7">
