@@ -16,6 +16,7 @@ import Enrollment from "../enrollment/Enrollment";
 import EnrollmentOverview from "../enrollment/EnrollmentOverview";
 import Enrollmentdriver from "../enrollment/EnrollmentDriver";
 import EnrollmentEngagement from "../enrollment/EnrollmentEngagement";
+import EnrollmentDemographic from "../enrollment/EnrollmentDemographic";
 function Router() {
 	return (
 		<BrowserRouter>
@@ -43,8 +44,8 @@ function Router() {
 					<Route path="overview" element={<EnrollmentOverview />} />
 					<Route path="driver" element={<Enrollmentdriver />} />
 					<Route path="engagement" element={<EnrollmentEngagement />} />
-					{/* <Route path="demographics" element={<EnrollmentDemographics />} />
-					<Route path="reasons" element={<EnrollmentReasons />} /> */}
+					<Route path="demographic" element={<EnrollmentDemographic />} />
+					{/* <Route path="reasons" element={<EnrollmentReasons />} /> */}
 				</Route>
 
 				<Route

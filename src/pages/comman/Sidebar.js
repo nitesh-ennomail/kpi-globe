@@ -286,11 +286,20 @@ function Sidebar(props) {
 												</Link>
 											</li>
 											<li className="nav-item">
-												<a
+												{/* <a
 													className="nav-link"
 													href="../../pages/enrollment/enrollment-demographics.html">
 													<span className="sidenav-normal"> Demographics </span>
-												</a>
+												</a> */}
+												<Link
+													className={`nav-link ${
+														activeUrl == "/enrollment/demographic"
+															? "active"
+															: ""
+													}`}
+													to="/enrollment/demographic">
+													<span className="sidenav-normal"> Demographics </span>
+												</Link>
 											</li>
 											<li className="nav-item">
 												<a
