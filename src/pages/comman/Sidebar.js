@@ -324,35 +324,77 @@ function Sidebar(props) {
 								aria-controls="ecommerceExamples"
 								role="button"
 								aria-expanded="false">
-								<div className="icon icon-shape shadow border-radius-md text-center d-flex align-items-center justify-content-center me-2">
+								{/* <div className="icon icon-shape shadow border-radius-md text-center d-flex align-items-center justify-content-center me-2">
 									<i className="fa-solid fa-prescription-bottle-medical fa-fw opacity-10 text-2xl text-gradient text-primary d-flex align-items-center justify-content-center"></i>
+								</div> */}
+								<div
+									className={`${activeIcon} ${
+										nameUrl.path == "fulfillmentment"
+											? "bg-gradient-primary"
+											: ""
+									}`}>
+									<i
+										className={`${activeTab} ${
+											nameUrl.path == "fulfillmentment"
+												? "fa-solid fa-clipboard-user fa-fw text-white"
+												: "fa-solid fa-clipboard-user fa-fw text-gradient text-primary"
+										}`}></i>
 								</div>
 								<span className="nav-link-text ms-1">Fulfillment</span>
 							</a>
-							<div className="collapse" id="fulfillmentPages">
+							<div
+								className={`collapse ${
+									nameUrl.path == "fulfillment" ? "show" : ""
+								}`}
+								id="fulfillmentPages">
 								<ul className="nav ms-4 ps-3">
 									<li className="nav-item">
 										<ul className="nav nav-sm flex-column">
 											<li className="nav-item">
-												<a
+												{/* <a
 													className="nav-link"
 													href="../../pages/fulfillment/fulfillment-overview.html">
 													<span className="sidenav-normal"> Overview </span>
-												</a>
+												</a> */}
+												<Link
+													className={`nav-link ${
+														activeUrl == "/fulfillment/overview" ? "active" : ""
+													}`}
+													to="/fulfillment/overview">
+													<span className="sidenav-normal"> Overview </span>
+												</Link>
 											</li>
 											<li className="nav-item">
-												<a
+												{/* <a
 													className="nav-link"
 													href="../../pages/fulfillment/fulfillment-engagement.html">
 													<span className="sidenav-normal"> Engagement </span>
-												</a>
+												</a> */}
+												<Link
+													className={`nav-link ${
+														activeUrl == "/fulfillment/engagement"
+															? "active"
+															: ""
+													}`}
+													to="/fulfillment/engagement">
+													<span className="sidenav-normal"> Engagement </span>
+												</Link>
 											</li>
 											<li className="nav-item">
-												<a
+												{/* <a
 													className="nav-link"
 													href="../../pages/fulfillment/fulfillment-demographics.html">
 													<span className="sidenav-normal"> Demographics </span>
-												</a>
+												</a> */}
+												<Link
+													className={`nav-link ${
+														activeUrl == "/fulfillment/demographic"
+															? "active"
+															: ""
+													}`}
+													to="/fulfillment/demographic">
+													<span className="sidenav-normal"> Demographics </span>
+												</Link>
 											</li>
 										</ul>
 									</li>

@@ -18,6 +18,10 @@ import Enrollmentdriver from "../enrollment/EnrollmentDriver";
 import EnrollmentEngagement from "../enrollment/EnrollmentEngagement";
 import EnrollmentDemographic from "../enrollment/EnrollmentDemographic";
 import EnrollmentReasons from "../enrollment/EnrollmentReasons";
+import FulfillmentOverview from "../fulfillment/FulfillmentOverview";
+import Fulfillment from "../fulfillment/Fulfillment";
+import FulfillmentEngagement from "../fulfillment/FulfillmentEngagement";
+import FulfillmentDemographic from "../fulfillment/FulfillmentDemographic";
 function Router() {
 	return (
 		<BrowserRouter>
@@ -47,6 +51,13 @@ function Router() {
 					<Route path="engagement" element={<EnrollmentEngagement />} />
 					<Route path="demographic" element={<EnrollmentDemographic />} />
 					<Route path="reasons" element={<EnrollmentReasons />} />
+				</Route>
+
+				{/* Fulfillment route */}
+				<Route path="fulfillment" element={<Fulfillment />}>
+					<Route path="overview" element={<FulfillmentOverview />} />
+					<Route path="engagement" element={<FulfillmentEngagement />} />
+					<Route path="demographic" element={<FulfillmentDemographic />} />
 				</Route>
 
 				<Route
